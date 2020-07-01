@@ -1,18 +1,12 @@
-// @flow strict
 import React from 'react';
 import { Link } from 'gatsby';
 import { orderBy } from 'lodash/collection';
 import { kebabCase } from 'lodash/string';
 import styles from './Category.module.scss';
 
-type Props = {
-  category: any,
-  selectedCategory: string;
-};
-
 const sortTotalCount = (sortArray) => orderBy(sortArray, ['totalCount', 'fieldValue'], ['desc']);
 
-const Category = ({ category, selectedCategory }: Props) => (
+const Category = ({ category, selectedCategory }) => (
   <div className={styles["Category"]}>
     {sortTotalCount(category.map(c => (
       <li key={c.fieldValue}>

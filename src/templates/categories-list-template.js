@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import { graphql } from 'gatsby';
 import Sidebar from '../components/Sidebar';
@@ -7,22 +6,22 @@ import Page from '../components/Page';
 import { useSiteMetadata, useCategoriesList } from '../hooks';
 import Category from "../components/Category/Category";
 import Feed from "../components/Feed";
-import styles from '../components/Layout/Layout.module.scss';
-import Divider from "../components/Divider";
 
 const CategoriesListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
   const categories = useCategoriesList();
 
+  const mainPage = (
+    <Page title="Categories">
+      <Category category={categories} selectedCategory={pageContext.category}/>
+      <Feed edges={data.allMarkdownRemark.edges} />
+    </Page>
+  );
+
+  const side = <Sidebar/>;
+
   return (
-    <Layout styles={styles} title={`Categories - ${title}`} description={subtitle}>
-      <Sidebar gridArea={{ gridArea: 'side' }} />
-      <Divider gridArea={{ gridArea: 'divider' }}/>
-      <Page title="Categories" gridArea={{ gridArea: 'page' }}>
-        <Category category={categories} selectedCategory={pageContext.category}/>
-        <Feed edges={data.allMarkdownRemark.edges} />
-      </Page>
-    </Layout>
+    <Layout main={mainPage} side={side} title={`Categories - ${title}`} description={subtitle}/>
   );
 };
 

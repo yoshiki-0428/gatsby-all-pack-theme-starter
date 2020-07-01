@@ -111,8 +111,6 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.19.0",
     "eslint-watch": "6.0.1",
-    "flow-bin": "^0.122.0",
-    "flow-typed": "^3.1.0",
     "gh-pages": "2.2.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.0.0",
@@ -124,5 +122,13 @@
     "stylelint": "13.3.0",
     "stylelint-config-recommended-scss": "4.2.0",
     "stylelint-scss": "3.16.0"
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "./tailwind.config.js",
+      "preset": "emotion",
+      "hasSuggestions": true,
+      "debug": false
+    }
   }
 }

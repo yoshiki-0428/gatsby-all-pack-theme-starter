@@ -4,27 +4,18 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
 import { useSiteMetadata } from '../hooks';
-import type { MarkdownRemark } from '../types';
-import styles from '../components/Layout/PostLayout.module.scss';
-import Toc from "../components/Toc";
+import Sidebar from "../components/Sidebar";
 
-type Props = {
-  data: {
-    markdownRemark: MarkdownRemark
-  }
-};
-
-const PostTemplate = ({ data }: Props) => {
+const PostTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { frontmatter, excerpt } = data.markdownRemark;
   const { title: postTitle, description: postDescription, socialImage } = frontmatter;
   const metaDescription = postDescription !== null ? excerpt : siteSubtitle;
 
+  const main = <Post post={data.markdownRemark} />;
+  const side = <Sidebar/>;
   return (
-    <Layout styles={styles} title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage} >
-      <Post post={data.markdownRemark} gridArea={{ gridArea: 'post' }} />
-      <Toc tableOfContents={data.markdownRemark.tableOfContents} gridArea={{ gridArea: 'toc' }}/>
-    </Layout>
+    <Layout main={main} side={side} title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage} />
   );
 };
 

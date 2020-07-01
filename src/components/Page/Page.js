@@ -1,27 +1,24 @@
 import React, { useRef, useEffect } from 'react';
-import styles from './Page.module.scss';
+import tw from "twin.macro"
 
-type Props = {
-  title?: string,
-  children: React.Node,
-  gridArea: {}
-};
-
-const Page = ({ title, children, gridArea }: Props) => {
+const Page = ({ title, children }) => {
   const pageRef = useRef();
 
   useEffect(() => {
     pageRef.current.scrollIntoView();
   });
 
+  const Inner = tw.div`py-12`;
+  const Body = tw.div`text-base`;
+
   return (
-    <div ref={pageRef} className={styles.page} style={gridArea}>
-      <div className={styles['page__inner']}>
-        { title && <h1 className={styles['page__title']}>{title}</h1>}
-        <div className={styles['page__body']}>
+    <div ref={pageRef}>
+      <Inner>
+        { title && <h1>{title}</h1>}
+        <Body>
           {children}
-        </div>
-      </div>
+        </Body>
+      </Inner>
     </div>
   );
 };
