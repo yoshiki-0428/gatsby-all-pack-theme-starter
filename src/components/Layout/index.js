@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useSiteMetadata } from '../../hooks';
-import Header from "../Header/Header";
 import Copyright from "../Sidebar/Copyright";
+import Header from "../Header";
 import tw from "twin.macro"
 
 const Layout = ({
@@ -15,20 +15,20 @@ const Layout = ({
   const { author, copyright } = useSiteMetadata();
   const metaImage = socialImage != null ? socialImage : author.photo;
 
-  const Div = tw.div`flex flex-col min-h-screen`;
-  const Main = tw.div`grid grid-cols-3 gap-4 flex-grow px-32`;
-  const Article = tw.div`col-span-2`;
-  const Side = tw.div`col-span-1`;
-  const Footer = tw.div`col-span-4`;
+  const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
+  const Body = tw.div`grid grid-cols-12 gap-10 flex-grow px-48 py-10`;
+  const Article = tw.div`col-span-8`;
+  const Side = tw.div`col-span-4`;
+  const Footer = tw.div`col-span-10`;
 
   return (
     <Div>
       <Header/>
 
-      <Main>
+      <Body>
         <Article>{main}</Article>
         <Side>{side}</Side>
-      </Main>
+      </Body>
 
       <Footer>
         <Copyright copyright={copyright}/>

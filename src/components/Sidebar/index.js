@@ -7,9 +7,9 @@ const SideBar = () => {
   const tags = useTagsList();
   const categories = useCategoriesList();
 
-  const Main = tw.div`max-w-sm w-full`;
-  const Inner = tw.div`bg-white rounded-b p-6`;
-  const AuthorDiv = tw.div`bg-gray-200 p-4`;
+  const Main = tw.div`max-w-xl rounded overflow-hidden shadow-lg`;
+  const Inner = tw.div`bg-white rounded-b`;
+  const AuthorDiv = tw.div`p-4`;
   const ImgWrap = tw.span`flex justify-between`;
   const AuthorImg = tw.img`w-12 h-12 rounded-full`;
   const AuthorText = tw.p`p-2 text-base`;

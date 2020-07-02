@@ -13,8 +13,10 @@ const CategoriesListTemplate = ({ data, pageContext }) => {
 
   const mainPage = (
     <Page title="Categories">
-      <Category category={categories} selectedCategory={pageContext.category}/>
-      <Feed edges={data.allMarkdownRemark.edges} />
+      <div>
+        <Category category={categories} selectedCategory={pageContext.category}/>
+        <Feed edges={data.allMarkdownRemark.edges} />
+      </div>
     </Page>
   );
 

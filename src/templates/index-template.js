@@ -24,13 +24,15 @@ const IndexTemplate = ({ data, pageContext }) => {
 
   const mainPage = (
     <Page>
-      <Feed edges={edges} />
-      <Pagination
-        prevPagePath={prevPagePath}
-        nextPagePath={nextPagePath}
-        hasPrevPage={hasPrevPage}
-        hasNextPage={hasNextPage}
-      />
+      <div>
+        <Feed edges={edges} />
+        <Pagination
+          prevPagePath={prevPagePath}
+          nextPagePath={nextPagePath}
+          hasPrevPage={hasPrevPage}
+          hasNextPage={hasNextPage}
+        />
+      </div>
     </Page>
   );
 

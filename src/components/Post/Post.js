@@ -5,24 +5,23 @@ import Comments from './Comments';
 import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
-import styles from './Post.module.scss';
 import { ShareSns } from "../ShareSns/ShareSns";
 import Disqus from 'gatsby-plugin-disqus';
 
-const Post = ({ post, gridArea }) => {
+const Post = ({ post }) => {
   const { id, html } = post;
   const { tagSlugs, slug } = post.fields;
   const { tags, title, date } = post.frontmatter;
 
   return (
-    <div className={styles['post']} style={gridArea}>
-      <Link className={styles['post__home-button']} to="/">Back</Link>
+    <div>
+      {/*<Link className={styles['post__home-button']} to="/">Back</Link>*/}
 
-      <div className={styles['post__content']}>
+      <div>
         <Content body={html} title={title} />
       </div>
 
-      <div className={styles['post__footer']}>
+      <div>
         <Meta date={date} />
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
         {typeof window !== 'undefined' && window.location.href &&
@@ -38,7 +37,7 @@ const Post = ({ post, gridArea }) => {
         <Author />
       </div>
 
-      <div className={styles['post__comments']}>
+      <div>
         <Comments postSlug={slug} postTitle={post.frontmatter.title} />
       </div>
     </div>

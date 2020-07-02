@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Observer from './Observer';
 import styles from './Image.module.scss';
+import tw from "twin.macro"
 
 class Image extends React.Component {
   constructor(props) {
@@ -41,9 +42,9 @@ class Image extends React.Component {
     if (res === 'small') {
       res = '400x'
     } else if (res === 'medium') {
-      res = '500x'
+      res = '750x'
     } else if (res === 'large') {
-      res = '1000x'
+      res = '2000x'
     }
     return res
   }
@@ -98,45 +99,49 @@ class Image extends React.Component {
         backgroundImage: `url(${
             this.state.isIntersecting ? fullSrc : smallSrc
         })`,
+        height: '200px',
         backgroundSize
       }
     }
 
+    const Img = tw.img`w-full`;
+
     return (
         <Fragment>
           {isUploadcare && lazy && (
-              <Observer onChange={this.handleIntersection}>
-                <div
-                    className="BackgroundImage"
-                    ref={this.ref}
-                    style={{
-                      backgroundImage: `url(${smallSrc})`,
-                      backgroundSize: 'cover'
-                    }}
-                >
-                  {!background && (
-                      <img
-                          className={`LazyImage ${
-                              className + this.state.isIntersecting ? ' faded' : ''
-                          }`}
-                          src={this.state.isIntersecting ? fullSrc : ''}
-                          srcSet={this.state.isIntersecting ? secSet : ''}
-                          sizes={'100vw'}
-                          onClick={onClick}
-                          title={title}
-                          alt={alt}
-                      />
-                  )}
-                  {background && (
-                      <div
-                          className={`LazyImage BackgroundImage absolute ${
-                              className + this.state.isIntersecting ? ' faded' : ''
-                          }`}
-                          style={style}
-                      />
-                  )}
-                </div>
-              </Observer>
+            <Observer onChange={this.handleIntersection}>
+              <div
+                className="BackgroundImage"
+                ref={this.ref}
+                style={{
+                  backgroundImage: `url(${smallSrc})`,
+                  backgroundSize: 'cover',
+                  height: '200px'
+                }}
+              >
+                {!background && (
+                  <img
+                    className={`LazyImage ${
+                        className + this.state.isIntersecting ? ' faded' : ''
+                    }`}
+                    src={this.state.isIntersecting ? fullSrc : ''}
+                    srcSet={this.state.isIntersecting ? secSet : ''}
+                    sizes={'100vw'}
+                    onClick={onClick}
+                    title={title}
+                    alt={alt}
+                  />
+                )}
+                {background && (
+                  <div
+                    className={`LazyImage BackgroundImage absolute ${
+                        className + this.state.isIntersecting ? ' faded' : ''
+                    }`}
+                    style={style}
+                  />
+                )}
+              </div>
+            </Observer>
           )}
           {fullImage && (
               <Fragment>

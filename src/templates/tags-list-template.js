@@ -13,8 +13,10 @@ const TagsListTemplate = ({ data, pageContext }) => {
 
   const mainPage = (
     <Page gridArea={{ gridArea: 'page' }} title="Tags">
-      <Tags tags={tags} selectedTag={pageContext.tag}/>
-      <Feed edges={data.allMarkdownRemark.edges} />
+      <div>
+        <Tags tags={tags} selectedTag={pageContext.tag}/>
+        <Feed edges={data.allMarkdownRemark.edges} />
+      </div>
     </Page>
   );
 
