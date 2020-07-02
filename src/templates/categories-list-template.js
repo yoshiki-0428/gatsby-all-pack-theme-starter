@@ -10,12 +10,13 @@ import Feed from "../components/Feed";
 const CategoriesListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
   const categories = useCategoriesList();
+  const { edges, group } = data.allMarkdownRemark;
 
   const mainPage = (
     <Page title="Categories">
       <div>
         <Category category={categories} selectedCategory={pageContext.category}/>
-        <Feed edges={data.allMarkdownRemark.edges} />
+        <Feed edges={edges} tags={group} />
       </div>
     </Page>
   );
@@ -33,6 +34,10 @@ export const query = graphql`
             filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true }, category: { glob: $category } } },
             sort: { order: DESC, fields: [frontmatter___date] }
         ){
+            group(field: frontmatter___tags) {
+                fieldValue
+                totalCount
+            }
             edges {
                 node {
                     fields {

@@ -10,12 +10,13 @@ import { graphql } from "gatsby";
 const TagsListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
   const tags = useTagsList();
+  const { edges, group } = data.allMarkdownRemark;
 
   const mainPage = (
     <Page gridArea={{ gridArea: 'page' }} title="Tags">
       <div>
         <Tags tags={tags} selectedTag={pageContext.tag}/>
-        <Feed edges={data.allMarkdownRemark.edges} />
+        <Feed edges={edges} tags={group} />
       </div>
     </Page>
   );

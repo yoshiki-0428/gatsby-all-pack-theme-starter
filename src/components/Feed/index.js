@@ -5,7 +5,7 @@ import "twin.macro";
 import tw from "twin.macro"
 import Image from "../Image";
 
-const Feed = ({ edges }) => {
+const Feed = ({ edges, tags }) => {
   // tailwindcss
   const Main = tw.div`w-full rounded overflow-hidden shadow-lg mb-10 bg-white`;
   const Content = tw.div`px-6 py-4`;
@@ -16,7 +16,9 @@ const Feed = ({ edges }) => {
   const ButtonWrap = tw.div`pt-0 pb-4 text-center`;
   const Button = tw.button`bg-transparent hover:underline font-semibold py-2 px-4 border rounded`;
 
-  console.log(edges);
+  const Tag = tw.span`inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2`;
+
+  console.log(tags);
   return (
       <div>
         {edges.map((edge) => (
@@ -55,6 +57,11 @@ const Feed = ({ edges }) => {
                     </Button>
                   </Link>
                 </ButtonWrap>
+
+                {tags.map((tag) => (
+                  <Tag>#{tag.fieldValue}</Tag>
+                ))}
+
               </Content>
             </Main>
         ))}

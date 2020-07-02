@@ -19,13 +19,13 @@ const IndexTemplate = ({ data, pageContext }) => {
     nextPagePath
   } = pageContext;
 
-  const { edges } = data.allMarkdownRemark;
+  const { edges, group } = data.allMarkdownRemark;
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   const mainPage = (
     <Page>
       <div>
-        <Feed edges={edges} />
+        <Feed edges={edges} tags={group} />
         <Pagination
           prevPagePath={prevPagePath}
           nextPagePath={nextPagePath}
@@ -51,6 +51,10 @@ export const query = graphql`
         filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } },
         sort: { order: DESC, fields: [frontmatter___date] }
       ){
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
       edges {
         node {
           fields {
