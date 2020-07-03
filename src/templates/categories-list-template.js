@@ -1,23 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { useSiteMetadata, useCategoriesList } from '../hooks';
 import Sidebar from '../components/Sidebar';
 import Layout from '../components/Layout';
 import Page from '../components/Page';
-import { useSiteMetadata, useCategoriesList } from '../hooks';
-import Category from "../components/Category/Category";
 import Feed from "../components/Feed";
+import Tags from "../components/Tags/";
 
 const CategoriesListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
   const categories = useCategoriesList();
   const { edges, group } = data.allMarkdownRemark;
 
+  const pageTitle = pageContext.category === '*' ? '' : `${pageContext.category}に関する記事一覧`;
   const mainPage = (
-    <Page title="Categories">
-      <div>
-        <Category category={categories} selectedCategory={pageContext.category}/>
-        <Feed edges={edges} tags={group} />
-      </div>
+    <Page title={pageTitle} content={(
+      <Feed edges={edges} tags={group} />
+    )} footerContent={(
+      <Tags tags={categories} urlPrefix={'category'} selectedTag={pageContext.category}/>
+    )}>
     </Page>
   );
 

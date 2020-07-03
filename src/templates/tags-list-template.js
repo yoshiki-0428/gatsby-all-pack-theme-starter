@@ -1,24 +1,25 @@
 import React from 'react';
+import { graphql } from "gatsby";
+import { useSiteMetadata, useTagsList } from '../hooks';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
-import { useSiteMetadata, useTagsList } from '../hooks';
-import Tags from "../components/Tags";
 import Feed from "../components/Feed";
-import { graphql } from "gatsby";
+import Tags from "../components/Tags/";
 
 const TagsListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
   const tags = useTagsList();
   const { edges, group } = data.allMarkdownRemark;
 
+  const pageTitle = pageContext.tag === '*' ? '' : `${pageContext.tag}に関する記事一覧`;
   const mainPage = (
-    <Page gridArea={{ gridArea: 'page' }} title="Tags">
-      <div>
-        <Tags tags={tags} selectedTag={pageContext.tag}/>
+      <Page title={pageTitle} content={(
         <Feed edges={edges} tags={group} />
-      </div>
-    </Page>
+      )} footerContent={(
+        <Tags tags={tags} urlPrefix={'tags'} selectedTag={pageContext.tag}/>
+      )}>
+      </Page>
   );
 
   const side = <Sidebar/>;

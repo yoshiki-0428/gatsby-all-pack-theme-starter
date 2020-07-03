@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import "twin.macro";
 import tw from "twin.macro"
 import Image from "../Image";
+import Tags from "../Tags/";
 
 const Feed = ({ edges, tags }) => {
   // tailwindcss
@@ -12,11 +13,9 @@ const Feed = ({ edges, tags }) => {
   const ContentDate = tw.div`text-base mb-2 text-center`;
   const ContentText = tw.div`font-bold text-xl mb-2 text-center text-gray-800 hover:underline`;
   const ContentCategory = tw.div`text-base mb-2 text-center text-blue-600`;
-  const ContentExcerpt = tw.p`text-gray-700 text-base`;
+  const ContentExcerpt = tw.p`text-gray-700 text-center text-base`;
   const ButtonWrap = tw.div`pt-0 pb-4 text-center`;
   const Button = tw.button`bg-transparent hover:underline font-semibold py-2 px-4 border rounded`;
-
-  const Tag = tw.span`inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2`;
 
   console.log(tags);
   return (
@@ -41,10 +40,10 @@ const Feed = ({ edges, tags }) => {
               </Content>
               <Link to={edge.node.fields.slug}>
                 <Image
-                    background
-                    resolutions="small"
-                    alt={''}
-                    src={edge.node.frontmatter.socialImage}
+                  background
+                  resolutions="small"
+                  alt={''}
+                  src={edge.node.frontmatter.socialImage}
                 />
                 {/*<Img src={edge.node.frontmatter.socialImage}/>*/}
               </Link>
@@ -58,10 +57,7 @@ const Feed = ({ edges, tags }) => {
                   </Link>
                 </ButtonWrap>
 
-                {tags.map((tag) => (
-                  <Tag>#{tag.fieldValue}</Tag>
-                ))}
-
+                <Tags tags={tags} urlPrefix={'tags'}/>
               </Content>
             </Main>
         ))}

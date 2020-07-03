@@ -7,9 +7,9 @@ const SideBar = () => {
   const tags = useTagsList();
   const categories = useCategoriesList();
 
-  const Main = tw.div`max-w-xl rounded overflow-hidden shadow-lg`;
-  const Inner = tw.div`bg-white rounded-b`;
-  const AuthorDiv = tw.div`p-4`;
+  const Main = tw.div`max-w-xl`;
+  const Inner = tw.div`mb-10`;
+  const AuthorDiv = tw.div`p-4 bg-white rounded-b shadow-md`;
   const ImgWrap = tw.span`flex justify-between`;
   const AuthorImg = tw.img`w-12 h-12 rounded-full`;
   const AuthorText = tw.p`p-2 text-base`;
@@ -23,6 +23,16 @@ const SideBar = () => {
           </ImgWrap>
           <AuthorText>{author.bio}</AuthorText>
         </AuthorDiv>
+      </Inner>
+      <Inner>
+        <div tw="p-4 bg-white rounded-b shadow-md">
+          TODO SearchBox
+          TODO UserInfoLink
+          TODO Ranking view https://gotohayato.com/content/513/
+          TODO Archive YYYY MM
+          TODO Category
+          TODO Tags
+        </div>
       </Inner>
     </Main>
   );

@@ -1,19 +1,25 @@
 import React from 'react';
 import tw from "twin.macro"
 
-const Page = ({ title, children }) => {
-  const Inner = tw.div``;
+const Page = ({ title, content, footerContent }) => {
   const Body = tw.div`text-base flex justify-center`;
 
   return (
-      <div>
-        <Inner>
-          { title && <h1>{title}</h1>}
-          <Body>
-            {children}
-          </Body>
-        </Inner>
-      </div>
+      <>
+        {title && (
+          <>
+            <h1 tw="m-4 text-center">{title}</h1>
+            <hr tw="my-8"/>
+          </>
+        )}
+
+        <Body>
+          {content}
+        </Body>
+        <div>
+          {footerContent}
+        </div>
+      </>
   );
 };
 

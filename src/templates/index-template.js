@@ -1,15 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { useSiteMetadata } from '../hooks';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
 import Page from '../components/Page';
 import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
 
 const IndexTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-  const { copyright } = useSiteMetadata();
 
   const {
     currentPage,
@@ -23,7 +22,7 @@ const IndexTemplate = ({ data, pageContext }) => {
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   const mainPage = (
-    <Page>
+    <Page content={
       <div>
         <Feed edges={edges} tags={group} />
         <Pagination
@@ -33,7 +32,7 @@ const IndexTemplate = ({ data, pageContext }) => {
           hasNextPage={hasNextPage}
         />
       </div>
-    </Page>
+    }/>
   );
 
   const side = <Sidebar/>;

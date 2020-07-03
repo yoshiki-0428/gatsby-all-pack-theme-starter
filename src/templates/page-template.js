@@ -13,8 +13,9 @@ const PageTemplate = ({ data }) => {
   const metaDescription = pageDescription !== null ? pageDescription : siteSubtitle;
 
   const mainPage = (
-    <Page title={pageTitle}>
+    <Page title={pageTitle} content={(
       <div dangerouslySetInnerHTML={{ __html: pageBody }} />
+    )}>
     </Page>
   );
 

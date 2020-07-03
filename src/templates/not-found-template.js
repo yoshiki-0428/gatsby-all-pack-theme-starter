@@ -8,9 +8,7 @@ const NotFoundTemplate = () => {
   const { title, subtitle } = useSiteMetadata();
 
   const mainPage = (
-      <Page gridArea={{ gridArea: 'page' }}  title="NOT FOUND">
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </Page>
+      <Page title="NOT FOUND" content={<p>You just hit a route that doesn&#39;t exist... the sadness.</p>}/>
   );
 
   const side = <Sidebar/>;
