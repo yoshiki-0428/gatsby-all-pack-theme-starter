@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCategoriesList, useSiteMetadata, useTagsList} from '../../hooks';
 import tw from "twin.macro"
+import Contacts from "../Contacts";
 
 const SideBar = () => {
   const { author, copyright, menu } = useSiteMetadata();
@@ -22,6 +23,7 @@ const SideBar = () => {
             <div/><AuthorImg src={author.photo} alt={author.name} /><div/>
           </ImgWrap>
           <AuthorText>{author.bio}</AuthorText>
+          <Contacts contacts={author.contacts} />
         </AuthorDiv>
       </Inner>
       <Inner>
