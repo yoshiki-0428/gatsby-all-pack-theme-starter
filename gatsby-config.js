@@ -86,7 +86,6 @@ module.exports = {
                         date
                         template
                         draft
-                        description
                       }
                     }
                   }
@@ -162,6 +161,60 @@ module.exports = {
         },
       },
     },
+    // TODO algoria env
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: 'XIKSJSCPJ3',
+        apiKey: 'bfdeafc9b0b7b7d3b3049e065830b1b7',
+        indexName: 'BLOG', // for all queries
+        queries: [
+            {
+              query: `{
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                  filter: { frontmatter: { template: { eq: "post" }, draft: { eq: false } } }
+                ) {
+                  edges {
+                    node {
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        title
+                        date(formatString: "MMMM DD, YYYY")
+                        template
+                        category
+                        socialImage
+                        tags
+                      }
+                      excerpt
+                      rawMarkdownBody
+                    }
+                  }
+                }
+              }`,
+              transformer: ({ data }) =>
+                data.allMarkdownRemark.edges.flatMap(({ node }) => {
+                  return {
+                    id: node.fields.slug,
+                    title: node.frontmatter.title,
+                    date: new Date(node.frontmatter.date),
+                    template: node.fields.template,
+                    category: node.fields.category,
+                    socialImage: node.fields.socialImage,
+                    tags: node.fields.tags,
+                    excerpt: node.excerpt,
+                    rawMarkdownBody: node.rawMarkdownBody,
+                  }
+                }),
+            },
+        ],
+        chunkSize: 10000, // default: 1000
+      }
+    },
+    // TODO env
     {
       resolve: `gatsby-plugin-disqus`,
       options: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import tw from "twin.macro"
+import SearchComponent from "../SearchBox";
 
 const Header = ({}) => {
   const Nav = tw.nav`flex items-center justify-between flex-wrap bg-black p-6`;
@@ -7,6 +8,7 @@ const Header = ({}) => {
   const Svg = tw.svg`fill-current h-8 w-8 mr-2 w-12 h-12`;
   const NavText = tw.span`font-semibold text-xl tracking-tight`;
   const Content = tw.div`w-full block flex-grow lg:flex lg:items-center lg:w-auto`;
+  // TODO カテゴリーで一覧表示
   const ContentInner = tw.div`text-sm lg:flex-grow`;
   const ContentLink = tw.a`block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4`;
 
@@ -33,6 +35,7 @@ const Header = ({}) => {
             </ContentLink>
           </ContentInner>
         </Content>
+        <SearchComponent/>
       </Nav>
     </div>
   );

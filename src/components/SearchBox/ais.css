@@ -1,0 +1,26 @@
+.ais-Hits-item {
+    width: 100% !important;
+    list-style: none;
+}
+
+.ais-Panel-header {
+    border-bottom: 1px solid #eee;
+    text-transform: none !important;
+}
+.ais-Panel-body {
+    max-height: 310px;
+    overflow-y: scroll;
+}
+.ais-Panel-footer {
+    border-top: 1px solid #eee;
+    padding-bottom: 0;
+}
+
+.ais-PoweredBy {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+.ais-PoweredBy-text {
+    margin-right: 8px;
+}
