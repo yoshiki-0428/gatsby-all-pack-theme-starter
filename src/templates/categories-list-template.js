@@ -16,8 +16,6 @@ const CategoriesListTemplate = ({ data, pageContext }) => {
   const mainPage = (
     <Page title={pageTitle} content={(
       <Feed edges={edges} tags={group} />
-    )} footerContent={(
-      <Tags tags={categories} urlPrefix={'category'} selectedTag={pageContext.category}/>
     )}>
     </Page>
   );

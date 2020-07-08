@@ -2,6 +2,8 @@ import React from 'react';
 import {useCategoriesList, useSiteMetadata, useTagsList} from '../../hooks';
 import tw from "twin.macro"
 import Contacts from "../Contacts";
+import Menu from "../Menu";
+import Tags from "../Tags";
 
 const SideBar = () => {
   const { author, copyright, menu } = useSiteMetadata();
@@ -10,7 +12,7 @@ const SideBar = () => {
 
   const Main = tw.div`max-w-xl`;
   const Inner = tw.div`mb-10`;
-  const AuthorDiv = tw.div`p-4 bg-white rounded-b shadow-md`;
+  const Card = tw.div`p-4 bg-white rounded-b shadow-md`;
   const ImgWrap = tw.span`flex justify-between`;
   const AuthorImg = tw.img`w-12 h-12 rounded-full`;
   const AuthorText = tw.p`p-2 text-base`;
@@ -18,23 +20,34 @@ const SideBar = () => {
   return (
     <Main>
       <Inner>
-        <AuthorDiv>
+        {/*TODO Author切り出し*/}
+        <Card>
           <ImgWrap>
             <div/><AuthorImg src={author.photo} alt={author.name} /><div/>
           </ImgWrap>
           <AuthorText>{author.bio}</AuthorText>
           <Contacts contacts={author.contacts} />
-        </AuthorDiv>
+          <Menu items={menu}/>
+        </Card>
       </Inner>
       <Inner>
-        <div tw="p-4 bg-white rounded-b shadow-md">
-          TODO SearchBox
-          TODO UserInfoLink
-          TODO Ranking view https://gotohayato.com/content/513/
-          TODO Archive YYYY MM
-          TODO Category
-          TODO Tags
-        </div>
+        <Card>
+          TODO Ranking view https://gotohayato.com/content/513/<br/>
+
+          TODO wants? Archive YYYY MM
+        </Card>
+      </Inner>
+      <Inner>
+        <Card>
+          <h3 tw="mt-0 mb-2 text-base font-bold">カテゴリー</h3>
+          <Tags tags={categories} urlPrefix={'category'}/>
+        </Card>
+      </Inner>
+      <Inner>
+        <Card>
+          <h3 tw="mt-0 mb-2 text-base font-bold">タグ一覧</h3>
+          <Tags tags={tags} urlPrefix={'tags'}/>
+        </Card>
       </Inner>
     </Main>
   );

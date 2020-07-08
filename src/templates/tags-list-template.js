@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
 import Feed from "../components/Feed";
-import Tags from "../components/Tags/";
 
 const TagsListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
@@ -16,8 +15,6 @@ const TagsListTemplate = ({ data, pageContext }) => {
   const mainPage = (
       <Page title={pageTitle} content={(
         <Feed edges={edges} tags={group} />
-      )} footerContent={(
-        <Tags tags={tags} urlPrefix={'tags'} selectedTag={pageContext.tag}/>
       )}>
       </Page>
   );

@@ -7,7 +7,7 @@ import tw from "twin.macro";
 const sortTotalCount = (tags) => orderBy(tags, ['totalCount', 'fieldValue'], ['desc']);
 
 const Tags = ({ tags, urlPrefix, selectedTag }) => {
-  const Tag = tw.span`inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2`;
+  const Tag = tw.span`inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2`;
 
   return (
       <>

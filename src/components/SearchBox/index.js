@@ -25,6 +25,7 @@ const SearchComponent = () => {
   const show = () => setShowResults(true);
   const hidden = () => setShowResults(false);
 
+  const FullScreen = tw.div`w-screen absolute inset-0 z-10`;
   return (
     <InstantSearch
         indexName={'BLOG'}
@@ -38,9 +39,9 @@ const SearchComponent = () => {
       />
       <SearchBox onClick={show} />
       {showResults && (
-        <div tw="w-screen absolute inset-0 z-10" onClick={hidden} >
+        <FullScreen onClick={hidden} >
           <SearchWrapper />
-        </div>
+        </FullScreen>
       )}
     </InstantSearch>
   )
@@ -61,7 +62,7 @@ function SearchResult(props) {
   return (
       <div tw="flex justify-center pt-48">
         <div tw="w-1/2"/>
-        <div tw="bg-white p-2 rounded-sm shadow-xl">
+        <div tw="bg-white p-2 rounded-sm shadow-xl border-solid border border-gray-800 ">
           {error ? <div>{error.message}</div> : null}
           {searchResults && searchResults.nbHits > 0 ? (
               <div>
