@@ -5,7 +5,6 @@ import Sidebar from '../components/Sidebar';
 import Layout from '../components/Layout';
 import Page from '../components/Page';
 import Feed from "../components/Feed";
-import Tags from "../components/Tags/";
 
 const CategoriesListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
