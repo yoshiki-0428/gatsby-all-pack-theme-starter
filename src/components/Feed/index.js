@@ -29,11 +29,11 @@ const Feed = ({ edges, tags }) => {
                   </time>
                 </ContentDate>
                 <ContentText>
-                  <Link to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
+                  <Link tw="text-gray-700 no-underline" to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
                 </ContentText>
 
                 <ContentCategory>
-                  <Link to={edge.node.fields.categorySlug}>
+                  <Link tw="no-underline" to={edge.node.fields.categorySlug}>
                     {edge.node.frontmatter.category}
                   </Link>
                 </ContentCategory>
@@ -45,12 +45,11 @@ const Feed = ({ edges, tags }) => {
                   alt={''}
                   src={edge.node.frontmatter.socialImage}
                 />
-                {/*<Img src={edge.node.frontmatter.socialImage}/>*/}
               </Link>
               <Content>
                 <ContentExcerpt>{edge.node.excerpt}</ContentExcerpt>
                 <ButtonWrap>
-                  <Link to={edge.node.fields.slug}>
+                  <Link tw="text-gray-700 no-underline" to={edge.node.fields.slug}>
                     <Button>
                       READ MORE
                     </Button>

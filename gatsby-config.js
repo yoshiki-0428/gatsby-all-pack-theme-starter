@@ -1,7 +1,10 @@
-'use strict';
-
 const siteConfig = require('./config.js');
 const postCssPlugins = require('./postcss-config.js');
+
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+
+const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
@@ -275,6 +278,18 @@ module.exports = {
           camelCase: false,
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(tailwindConfig),
+          require(`autoprefixer`),
+          ...(process.env.NODE_ENV === `production`
+              ? [require(`cssnano`)]
+              : []),
+        ],
+      },
     },
     'gatsby-plugin-flow',
     'gatsby-plugin-optimize-svgs',

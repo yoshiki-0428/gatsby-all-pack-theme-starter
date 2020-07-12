@@ -4,7 +4,7 @@ import tw from "twin.macro"
 import Tags from "../Tags";
 import Author from "../Author";
 
-const SideBar = () => {
+const SideBar = ({toc}) => {
   const tags = useTagsList();
   const categories = useCategoriesList();
 
@@ -36,6 +36,14 @@ const SideBar = () => {
           <Tags tags={tags} urlPrefix={'tags'}/>
         </Card>
       </Inner>
+      {toc &&(
+          <Inner>
+            <Card>
+              <h3 tw="mt-0 mb-2 text-base font-bold">目次</h3>
+              {toc}
+            </Card>
+          </Inner>
+      )}
     </Main>
   );
 };

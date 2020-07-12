@@ -1,0 +1,72 @@
+/*! purgecss start ignore */
+@tailwind base;
+
+.content h1 {
+    @apply text-xl;
+    @apply font-bold leading-loose;
+    @apply bg-gray-300;
+    @apply py-4 px-6 mt-10 mb-6;
+    @apply border-l-8 border-solid border-red-800;
+}
+.content h2 {
+    @apply text-lg;
+    @apply font-bold;
+    @apply px-3 my-6;
+    @apply border-l-8 border-solid border-red-800;
+}
+.content h3 {
+    @apply text-lg;
+    @apply font-bold;
+    @apply my-4;
+}
+.content h4 {
+    @apply text-lg;
+    @apply my-3;
+}
+.content blockquote {
+    @apply relative;
+    @apply p-3 my-6;
+    @apply bg-gray-300;
+    @apply border-l-4 border-solid border-gray-400;
+}
+.content p {
+    @apply leading-relaxed;
+}
+.content a {
+    @apply text-blue-600 underline;
+}
+.content img {
+    @apply px-3 my-6;
+}
+.content pre {
+    @apply rounded-sm;
+}
+.content table {
+    @apply block overflow-scroll;
+    @apply my-6;
+    @apply table-auto;
+}
+.content th {
+    @apply border w-1/2 px-4 py-2;
+}
+.content td {
+    @apply border px-4 py-2
+}
+.content ul {
+    @apply p-3 my-6;
+    @apply list-inside list-disc;
+}
+
+.toc ul {
+    @apply list-inside list-none;
+    @apply m-0;
+}
+.toc p {
+    @apply m-0;
+}
+
+@tailwind components;
+/*! purgecss end ignore */
+
+
+@tailwind utilities;

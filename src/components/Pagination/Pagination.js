@@ -5,7 +5,7 @@ import { PAGINATION } from '../../constants';
 import styles from './Pagination.module.scss';
 
 const cx = classNames.bind(styles);
-
+// TODO design
 const Pagination = ({
   prevPagePath,
   nextPagePath,

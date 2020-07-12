@@ -101,7 +101,7 @@ class Image extends React.Component {
           <Observer onChange={this.handleIntersection}>
             <div
               ref={this.ref}
-              tw="relative w-full sm:h-32 lg:h-64"
+              tw="relative w-full sm:h-32 md:h-64 lg:h-64"
             >
               <div
                 tw="inset-0 absolute overflow-hidden bg-center"

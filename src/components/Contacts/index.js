@@ -11,6 +11,7 @@ const Contacts = ({ contacts }) => (
             .map((name) => (!contacts[name] ? null : (
                 <li tw="m-1 rounded-full h-8 w-8 flex items-center justify-center border-solid border border-gray-800 hover:text-blue-500" key={name}>
                   <a
+                      tw="text-gray-700 no-underline"
                       href={getContactHref(name, contacts[name])}
                       rel="noopener noreferrer"
                       target="_blank"

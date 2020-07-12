@@ -82,6 +82,7 @@ function SearchResult(props) {
 export const SearchWrapper = connectStateResults(SearchResult);
 
 function Hit(props) {
+  // TODO 統一
   const ContentDate = tw.div`text-base mb-2 text-center`;
   const ContentText = tw.div`font-bold text-xl mb-2 text-center text-gray-800 hover:underline`;
   const ContentCategory = tw.div`text-base mb-2 text-center text-blue-600`;

@@ -24,6 +24,7 @@ export const ShareSns = ({ articleUrl, articleTitle }) => (
         <LinkedinIcon title={articleTitle} size={32} round />
       </LinkedinShareButton>
 
+      {/*TODO env 他のアイコン*/}
       <TwitterShareButton title={articleTitle} via="yoshiki__0428" url={articleUrl}>
         <TwitterIcon size={32} round />
       </TwitterShareButton>
