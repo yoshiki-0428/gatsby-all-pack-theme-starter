@@ -3,6 +3,7 @@ import {useCategoriesList, useTagsList} from '../../hooks';
 import tw from "twin.macro"
 import Tags from "../Tags";
 import Author from "../Author";
+import Adsense from "../Adsense";
 
 const SideBar = ({toc}) => {
   const tags = useTagsList();
@@ -44,6 +45,7 @@ const SideBar = ({toc}) => {
             </Card>
           </Inner>
       )}
+      <Adsense/>
     </Main>
   );
 };
