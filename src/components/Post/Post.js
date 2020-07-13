@@ -35,7 +35,6 @@ const Post = ({ post }) => {
           </time>
         </ContentDate>
 
-        {/* TODO Content */}
         <ContentText>{title}</ContentText>
         <ContentCategory>
           <Link tw="no-underline" to={category}>

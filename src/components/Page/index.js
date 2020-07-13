@@ -8,8 +8,8 @@ const Page = ({ title, content, footerContent }) => {
       <>
         {title && (
           <>
-            <h1 tw="m-4 text-center">{title}</h1>
-            <hr tw="my-8"/>
+            <h1 tw="m-4 text-2xl font-bold text-center">{title}</h1>
+            <hr tw="my-8 mx-auto w-1/5 border-gray-700"/>
           </>
         )}
 
