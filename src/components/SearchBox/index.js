@@ -6,11 +6,10 @@ import {
   SearchBox,
   Highlight,
   Configure,
-  PoweredBy, Panel,
+  PoweredBy,
   connectStateResults,
 } from 'react-instantsearch-dom';
 import "twin.macro"
-import "./ais.css"
 import { Link } from 'gatsby';
 import tw from "twin.macro"
 
