@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useSiteMetadata } from '../../hooks';
-import Copyright from "../Sidebar/Copyright";
 import Header from "../Header";
 import tw from "twin.macro"
 
@@ -31,7 +30,7 @@ const Layout = ({
       </Body>
 
       <Footer>
-        <Copyright copyright={copyright}/>
+        <div>{copyright}</div>
       </Footer>
       <Helmet>
         <html lang="jp" />

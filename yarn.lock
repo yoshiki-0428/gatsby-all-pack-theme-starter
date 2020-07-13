@@ -15540,6 +15540,11 @@ re-resizable@^4.11.0:
   resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-4.11.0.tgz#d5df10bda445c4ec0945751a223bf195afb61890"
   integrity sha512-dye+7rERqNf/6mDT1iwps+4Gf42420xuZgygF33uX178DxffqcyeuHbBuJ382FIcB5iP6mMZOhfW7kI0uXwb/Q==
 
+react-adsense@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-adsense/-/react-adsense-0.1.0.tgz#f170007a9ab05ee2cd1c915cdc9788624658e3c1"
+  integrity sha512-VzGMH9qA7bBKAveK1joFWphhB7e2Y1ToSGzUa8b7eit3+VSkg/2MSvKxe5d/r4mcmkOHu6CHNJW0nn6RQC3IZA==
+
 react-aria-menubutton@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/react-aria-menubutton/-/react-aria-menubutton-6.1.0.tgz#6f7fc81a3b16acb9c0678b8ceddde41e483cdeda"
