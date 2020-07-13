@@ -35,6 +35,9 @@
 .content a {
     @apply text-blue-600 underline;
 }
+.content a > svg {
+    @apply hidden;
+}
 .content img {
     @apply px-3 my-6;
 }
@@ -60,6 +63,9 @@
 .toc ul {
     @apply list-inside list-none;
     @apply m-0;
+}
+.toc a {
+    @apply text-blue-600 underline;
 }
 .toc p {
     @apply m-0;
