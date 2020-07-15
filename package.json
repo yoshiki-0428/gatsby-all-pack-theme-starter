@@ -74,6 +74,8 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-remark": "^2.7.1",
     "gatsby-transformer-sharp": "^2.4.4",
+    "google-auth-library": "^6.0.5",
+    "googleapis": "^54.0.0",
     "invariant": "^2.2.4",
     "katex": "^0.11.1",
     "lodash": "^4.17.15",
