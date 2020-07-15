@@ -15,19 +15,23 @@ const Layout = ({
   const metaImage = socialImage != null ? socialImage : author.photo;
 
   const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
-  const Body = tw.div`grid grid-cols-12 gap-10 flex-grow px-48 py-10`;
+  const Main = tw.div`container mx-auto`;
+  const Body = tw.div`w-5/6 grid grid-cols-12 gap-10 py-10 mx-auto`;
   const Article = tw.div`col-span-8`;
   const Side = tw.div`col-span-4`;
   const Footer = tw.div`col-span-10`;
 
   return (
     <Div>
+      <div>aaa</div>
       <Header/>
 
-      <Body>
-        <Article>{main}</Article>
-        <Side>{side}</Side>
-      </Body>
+      <Main>
+        <Body>
+          <Article>{main}</Article>
+          <Side>{side}</Side>
+        </Body>
+      </Main>
 
       <Footer>
         <div>{copyright}</div>
