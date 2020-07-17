@@ -1,3 +1,1 @@
-'use strict';
-
-exports.onRenderBody = require('./gatsby/on-render-body.js');
+exports.onRenderBody = require('./src/build/on-render-body.js');

@@ -1,8 +1,4 @@
-
-
-
-
-const createSchemeRank = async ({ actions, schema }) => {
+const createSchemaCustomization = async ({ actions, schema }) => {
   const { createTypes } = actions;
   createPupularPage();
   // `IPopularPage` と `PopularPage` を作成する
@@ -30,4 +26,4 @@ const createSchemeRank = async ({ actions, schema }) => {
   }
 };
 
-module.exports = createSchemeRank;
+module.exports = createSchemaCustomization;
