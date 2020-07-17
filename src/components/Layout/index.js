@@ -23,7 +23,7 @@ const Layout = ({
 
   return (
     <Div>
-      <div>aaa</div>
+      <div>Image</div>
       <Header/>
 
       <Main>

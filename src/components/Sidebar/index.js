@@ -1,12 +1,14 @@
 import React from 'react';
-import {useCategoriesList, useTagsList} from '../../hooks';
+import {useCategoriesList, usePopularList, useTagsList} from '../../hooks';
 import tw from "twin.macro"
 import Tags from "../Tags";
 import Author from "../Author";
 import Adsense from "../Adsense";
 import Feed from "../Feed";
 
-const SideBar = ({toc}) => {
+const SideBar = ({edges, toc}) => {
+  const popularList = usePopularList();
+  console.log(popularList)
   const tags = useTagsList();
   const categories = useCategoriesList();
 
@@ -22,12 +24,20 @@ const SideBar = ({toc}) => {
       <Inner>
         <Author/>
       </Inner>
-      <Inner>
-        <Card>
-          <h3 tw="mt-0 mb-2 text-base font-bold">よく読まれている記事</h3>
-          <Feed edges={json} />
-        </Card>
-      </Inner>
+      {popularList.length > 0 && (
+          <Inner>
+            <Card>
+              <h3 tw="mt-0 mb-2 text-base font-bold">よく読まれている記事</h3>
+              {popularList.map((p) => (
+                  <div>
+                    <h1>{p.title}</h1>
+                    <div>{p.socialImage}</div>
+                    <h1>{p.slug}</h1>
+                  </div>
+              ))}
+            </Card>
+          </Inner>
+      )}
       <Inner>
         <Card>
           <h3 tw="mt-0 mb-2 text-base font-bold">カテゴリー</h3>

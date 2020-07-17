@@ -35,7 +35,7 @@ const IndexTemplate = ({ data, pageContext }) => {
     }/>
   );
 
-  const side = <Sidebar/>;
+  const side = <Sidebar edges={edges} />;
 
   return (
     <Layout main={mainPage} side={side} title={pageTitle} description={siteSubtitle}/>
@@ -70,6 +70,7 @@ export const query = graphql`
         }
       }
     }
+    
   }
 `;
 
