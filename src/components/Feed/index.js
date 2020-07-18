@@ -12,7 +12,7 @@ const Feed = ({ edges, tags }) => {
   const ContentDate = tw.div`text-base mb-2 text-center`;
   const ContentText = tw.div`font-bold text-xl mb-2 text-center text-gray-800 hover:underline`;
   const ContentCategory = tw.div`text-base mb-2 text-center text-blue-600`;
-  const ContentExcerpt = tw.p`text-gray-700 text-center text-base`;
+  const ContentExcerpt = tw.p`text-gray-700 mb-2 text-center text-base`;
   const ButtonWrap = tw.div`pt-0 pb-4 text-center`;
   const Button = tw.button`bg-transparent hover:underline font-semibold py-2 px-4 border rounded`;
 

@@ -128,6 +128,9 @@
     width: 100% !important;
     list-style: none;
 }
+.ais-Highlight-highlighted {
+    @apply bg-blue-200 !important;
+}
 
 .ais-Panel-header {
     border-bottom: 1px solid #eee;

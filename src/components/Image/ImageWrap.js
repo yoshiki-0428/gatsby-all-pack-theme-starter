@@ -12,7 +12,7 @@ const ImageWrap = ({ item, size }) => {
       <Div>
         <Image
           resolutions="small"
-          alt={item.alt}
+          alt={item.alt ? item.alt : ''}
           src={item.socialImage}
         />
       </Div>
