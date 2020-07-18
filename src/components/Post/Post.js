@@ -5,9 +5,9 @@ import { ShareSns } from "../ShareSns/ShareSns";
 import Disqus from 'gatsby-plugin-disqus';
 import {useSiteMetadata} from "../../hooks";
 import tw from "twin.macro";
-import Image from "../Image";
 import {Link} from "gatsby";
 import moment from "moment";
+import ImageWrap from "../Image/ImageWrap";
 
 const Post = ({ post }) => {
   const { id, html } = post;
@@ -27,7 +27,6 @@ const Post = ({ post }) => {
 
   return (
     <div>
-
       <Card>
         <ContentDate>
           <time dateTime={moment(date).format('YYYY/MM/DD')}>
@@ -42,12 +41,7 @@ const Post = ({ post }) => {
           </Link>
         </ContentCategory>
       </Card>
-      <Image
-          background
-          resolutions="small"
-          alt={''}
-          src={socialImage}
-      />
+      <ImageWrap item={{socialImage: socialImage}} size={'normal'} />
       <Card>
 
         <div>

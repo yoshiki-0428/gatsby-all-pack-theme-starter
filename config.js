@@ -7,7 +7,7 @@ module.exports = {
   subtitle: 'フリーランスWebエンジニアYoshikiOhashiのTech Blog',
   copyright: '© 2020 Yoshiki Ohashi All rights reserved.',
   disqusShortname: 'tech-blog-yoshikiohashi',
-  postsPerPage: 2,
+  postsPerPage: 10,
   googleAnalyticsId: 'UA-157574909-3',
   useKatex: false,
   menu: [

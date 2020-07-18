@@ -3,11 +3,10 @@ import moment from 'moment';
 import { Link } from 'gatsby';
 import "twin.macro";
 import tw from "twin.macro"
-import Image from "../Image";
 import Tags from "../Tags/";
+import ImageWrap from "../Image/ImageWrap";
 
 const Feed = ({ edges, tags }) => {
-  // tailwindcss
   const Main = tw.div`w-full rounded overflow-hidden shadow-lg mb-10 bg-white`;
   const Content = tw.div`px-6 py-4`;
   const ContentDate = tw.div`text-base mb-2 text-center`;
@@ -17,7 +16,6 @@ const Feed = ({ edges, tags }) => {
   const ButtonWrap = tw.div`pt-0 pb-4 text-center`;
   const Button = tw.button`bg-transparent hover:underline font-semibold py-2 px-4 border rounded`;
 
-  console.log(tags);
   return (
       <div>
         {edges.map((edge) => (
@@ -39,12 +37,9 @@ const Feed = ({ edges, tags }) => {
                 </ContentCategory>
               </Content>
               <Link to={edge.node.fields.slug}>
-                <Image
-                  background
-                  resolutions="small"
-                  alt={''}
-                  src={edge.node.frontmatter.socialImage}
-                />
+                <ImageWrap
+                    size={'normal'}
+                    item={{ socialImage: edge.node.frontmatter.socialImage }} />
               </Link>
               <Content>
                 <ContentExcerpt>{edge.node.excerpt}</ContentExcerpt>

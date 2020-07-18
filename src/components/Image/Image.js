@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Observer from './Observer';
-import "twin.macro"
+import tw from "twin.macro"
 
 class Image extends React.Component {
   constructor(props) {
@@ -50,7 +50,6 @@ class Image extends React.Component {
 
   render() {
     let {
-      backgroundSize = 'cover',
       resolutions = 'large',
       src,
       secSet = '',
@@ -92,22 +91,24 @@ class Image extends React.Component {
       })`,
       opacity: `${this.state.isIntersecting} ? 1 : 0`,
       transition: "ease all 0.3s",
-      backgroundSize
     };
+
+    const ImageDiv = tw.div`inset-0 absolute overflow-hidden bg-center bg-no-repeat bg-cover`;
 
     return (
       <Fragment>
         {isUploadcare && lazy && (
           <Observer onChange={this.handleIntersection}>
-            <div
+            <ImageDiv
               ref={this.ref}
-              tw="relative w-full sm:h-32 md:h-64 lg:h-64"
+              style={
+                { backgroundImage: `url(${smallSrc})` }
+              }
             >
-              <div
-                tw="inset-0 absolute overflow-hidden bg-center"
+              <ImageDiv
                 style={style}
               />
-            </div>
+            </ImageDiv>
           </Observer>
         )}
         {normalImage && (
