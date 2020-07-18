@@ -38,7 +38,7 @@ const SearchComponent = () => {
       />
       <SearchBox onClick={show} />
       {showResults && (
-        <FullScreen style={{height: '1000rem'}} onClick={hidden} >
+        <FullScreen style={{height: `${document.body.offsetHeight}px`}} onClick={hidden} >
           <SearchWrapper />
         </FullScreen>
       )}
