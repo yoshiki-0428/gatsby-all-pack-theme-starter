@@ -12,29 +12,9 @@ module.exports = {
   useKatex: false,
   menu: [
     {
-      label: 'Top',
-      path: '/'
-    },
-    {
-      label: 'Category',
-      path: '/category'
-    },
-    {
-      label: 'Tags',
-      path: '/tags'
-    },
-    // {
-    //   label: 'Works',
-    //   path: '/'
-    // },
-    {
       label: 'About me',
       path: '/pages/about'
     },
-    // { TODO 制作物リストを作る
-    //   label: 'Portfolio & Resume =>',
-    //   path: 'https://yoshikiohashi.dev'
-    // },
   ],
   author: {
     name: 'Yoshiki Ohashi',

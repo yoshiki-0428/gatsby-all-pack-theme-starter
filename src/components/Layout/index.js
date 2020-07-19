@@ -24,7 +24,6 @@ const Layout = ({
 
   return (
     <Div>
-      <div>Image</div>
       <Header/>
 
       <Main>

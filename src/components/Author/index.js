@@ -2,24 +2,20 @@ import Contacts from "../Contacts";
 import Menu from "../Menu";
 import React from "react";
 import {useSiteMetadata} from "../../hooks";
-import tw from "twin.macro";
+import {CENTER_PHOTO, SPACER, SPACER_MINI, TEXT_BASE} from "../Tailwind";
 
 const Author = () => {
   const { author, menu } = useSiteMetadata();
-  const Card = tw.div`p-4 bg-white rounded-b shadow-md`;
-  const ImgWrap = tw.span`flex justify-between`;
-  const AuthorImg = tw.img`p-0 m-0 w-12 h-12 rounded-full`;
-  const AuthorText = tw.p`p-2 text-base`;
 
   return (
-      <Card>
-        <ImgWrap>
-          <div/><AuthorImg src={author.photo} alt={author.name} /><div/>
-        </ImgWrap>
-        <AuthorText>{author.bio}</AuthorText>
+      <SPACER_MINI>
+        <CENTER_PHOTO photo={author.photo} name={author.name} />
+        <SPACER_MINI>
+          <TEXT_BASE>{author.bio}</TEXT_BASE>
+        </SPACER_MINI>
         <Contacts contacts={author.contacts} />
         <Menu items={menu}/>
-      </Card>
+      </SPACER_MINI>
   )
 };
 

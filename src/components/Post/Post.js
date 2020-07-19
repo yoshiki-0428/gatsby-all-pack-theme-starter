@@ -9,6 +9,8 @@ import {Link} from "gatsby";
 import moment from "moment";
 import ImageWrap from "../Image/ImageWrap";
 import InstantView from "../InstantView";
+import { kebabCase } from 'lodash/string';
+import {HR, TITLE_H3} from "../Tailwind";
 
 const Post = ({ post }) => {
   const { id, html } = post;
@@ -47,7 +49,7 @@ const Post = ({ post }) => {
 
         <ContentText>{title}</ContentText>
         <ContentCategory>
-          <Link tw="no-underline" to={category}>
+          <Link tw="no-underline" to={`category/${kebabCase(category)}`}>
             {category}
           </Link>
         </ContentCategory>
@@ -75,8 +77,8 @@ const Post = ({ post }) => {
       {relatedArticles.length > 0 && (
           <Inner>
             <Card>
-              <h3 tw="mt-2 mb-0 text-center font-bold">Related Links</h3>
-              <hr tw="my-2 mx-auto w-1/5 border-gray-700"/>
+              <TITLE_H3>Related Links</TITLE_H3>
+              <HR/>
               <InstantView flex items={relatedArticles} />
             </Card>
           </Inner>
