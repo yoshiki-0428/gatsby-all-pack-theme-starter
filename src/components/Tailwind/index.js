@@ -26,9 +26,12 @@ export const BUTTON_CENTER = ({ to, children }) =>
       <Link tw="bg-transparent hover:underline font-semibold py-2 px-4 border rounded" to={to}>{children}</Link>
     </div>;
 
-export const CARD = ({ mb = false, children}) => {
+export const CARD = ({ mb = false, top = false, children}) => {
   const Inner = mb ? tw.div`mb-0` : tw.div`mb-10`;
-  const Card = mb ? tw.div`bg-white rounded-tr rounded-tl shadow-md` : tw.div`bg-white rounded shadow-md`;
+  const Card = mb ?
+      tw.div`bg-white rounded-tr rounded-tl shadow-md` :
+      top ? tw.div`bg-white rounded-br rounded-bl shadow-md`
+          : tw.div`bg-white rounded shadow-md`;
   return (
       <Inner>
         <Card>{children}</Card>

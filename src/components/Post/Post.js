@@ -43,7 +43,7 @@ const Post = ({ post }) => {
         </SPACER>
       </CARD>
       <ImageWrap item={{socialImage: socialImage}} size={'normal'} />
-      <CARD>
+      <CARD top>
         <SPACER>
           <div>
             <div className={'content'} dangerouslySetInnerHTML={{ __html: html }} />

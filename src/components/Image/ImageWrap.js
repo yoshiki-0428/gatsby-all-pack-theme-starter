@@ -4,6 +4,9 @@ import tw from "twin.macro"
 import Image from "./Image";
 
 const ImageWrap = ({ item, size }) => {
+  if (!item.socialImage) {
+    return null;
+  }
   const Div = size === 'normal' ?
       tw.div`relative h-64` :
       tw.div`relative h-40`;
