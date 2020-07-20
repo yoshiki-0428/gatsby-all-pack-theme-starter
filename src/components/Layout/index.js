@@ -7,12 +7,15 @@ import {Link} from "gatsby";
 import ImageWrap from "../Image/ImageWrap";
 import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 
+
+
 const Layout = ({
     main,
     side,
     title,
     description,
-    socialImage
+    socialImage,
+    top = false
   }) => {
   const { author, copyright } = useSiteMetadata();
   const metaImage = socialImage != null ? socialImage : author.photo;
@@ -20,10 +23,28 @@ const Layout = ({
   const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
   const Main = tw.div`container mx-auto`;
   const Body = tw.div`w-5/6 grid grid-cols-12 gap-10 py-10 mx-auto`;
-  const TopContents = tw.div`col-span-4 bg-white shadow-lg`;
   const Article = tw.div`col-span-8`;
   const Side = tw.div`col-span-4`;
-  const Footer = tw.div`col-span-10`;
+  const Footer = tw.div`col-span-12`;
+
+  // TODO stub
+  const items = [
+    {
+      slug: '/posts/try-eventsource-client1',
+      socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/',
+      title: 'AAAAAbbbbaaaaaあああああ',
+    },
+    {
+      slug: '/posts/try-eventsource-client1',
+      socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/',
+      title: 'AAAAAbbbbaaaaaあああああ',
+    },
+    {
+      slug: '/posts/try-eventsource-client1',
+      socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/',
+      title: 'AAAAAbbbbaaaaaあああああ',
+    }
+  ];
 
   return (
     <Div>
@@ -31,20 +52,7 @@ const Layout = ({
 
       <Main>
         <Body>
-          <TopContents>
-            <div tw="rounded overflow-hidden  bg-white">
-              <Link to={'item.slug'}>
-                <ImageWrap
-                    item={{ socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/', alt: '' }}/>
-              </Link>
-              <SPACER>
-                <TEXT_GATSBY_LINK_H3 to={''}>{'ネイティブEventSourceクライアントとその他EventSourceクライアントを試してみた結果'}</TEXT_GATSBY_LINK_H3>
-              </SPACER>
-            </div>
-
-          </TopContents>
-          <TopContents>特集B</TopContents>
-          <TopContents>特集C</TopContents>
+          {top && (<TopContent items={items} />)}
           <Article>{main}</Article>
           <Side>{side}</Side>
         </Body>
@@ -67,6 +75,27 @@ const Layout = ({
         <meta name="twitter:image" content={metaImage} />
       </Helmet>
     </Div>
+  );
+};
+
+const TopContent = ({ items }) => {
+  const TopContents = tw.div`col-span-4 bg-white shadow-lg`;
+
+  return (
+      <>
+        {items.slice(0, 3).map(item => (
+            <TopContents>
+              <div tw="rounded overflow-hidden bg-white">
+                <Link to={item.slug}>
+                  <ImageWrap item={{ socialImage: item.socialImage, alt: '' }}/>
+                </Link>
+                <SPACER>
+                  <TEXT_GATSBY_LINK_H3 to={item.slug}>{item.title}</TEXT_GATSBY_LINK_H3>
+                </SPACER>
+              </div>
+            </TopContents>
+        ))}
+      </>
   );
 };
 

@@ -33,7 +33,7 @@
     @apply leading-relaxed;
 }
 .content a {
-    @apply text-blue-600 underline;
+    @apply text-blue-700 underline;
 }
 .content a > svg {
     @apply hidden;

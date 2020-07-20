@@ -38,7 +38,7 @@ const IndexTemplate = ({ data, pageContext }) => {
   const side = <Sidebar />;
 
   return (
-    <Layout main={mainPage} side={side} title={pageTitle} description={siteSubtitle}/>
+    <Layout main={mainPage} side={side} title={pageTitle} description={siteSubtitle} top/>
   );
 };
 
