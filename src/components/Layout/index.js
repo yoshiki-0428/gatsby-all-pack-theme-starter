@@ -3,6 +3,9 @@ import Helmet from 'react-helmet';
 import { useSiteMetadata } from '../../hooks';
 import Header from "../Header";
 import tw from "twin.macro"
+import {Link} from "gatsby";
+import ImageWrap from "../Image/ImageWrap";
+import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 
 const Layout = ({
     main,
@@ -17,7 +20,7 @@ const Layout = ({
   const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
   const Main = tw.div`container mx-auto`;
   const Body = tw.div`w-5/6 grid grid-cols-12 gap-10 py-10 mx-auto`;
-  const TopContents = tw.div`col-span-4 bg-white`;
+  const TopContents = tw.div`col-span-4 bg-white shadow-lg`;
   const Article = tw.div`col-span-8`;
   const Side = tw.div`col-span-4`;
   const Footer = tw.div`col-span-10`;
@@ -28,7 +31,18 @@ const Layout = ({
 
       <Main>
         <Body>
-          <TopContents>特集A</TopContents>
+          <TopContents>
+            <div tw="rounded overflow-hidden  bg-white">
+              <Link to={'item.slug'}>
+                <ImageWrap
+                    item={{ socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/', alt: '' }}/>
+              </Link>
+              <SPACER>
+                <TEXT_GATSBY_LINK_H3 to={''}>{'ネイティブEventSourceクライアントとその他EventSourceクライアントを試してみた結果'}</TEXT_GATSBY_LINK_H3>
+              </SPACER>
+            </div>
+
+          </TopContents>
           <TopContents>特集B</TopContents>
           <TopContents>特集C</TopContents>
           <Article>{main}</Article>

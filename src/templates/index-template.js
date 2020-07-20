@@ -18,13 +18,13 @@ const IndexTemplate = ({ data, pageContext }) => {
     nextPagePath
   } = pageContext;
 
-  const { edges, group } = data.allMarkdownRemark;
+  const { edges } = data.allMarkdownRemark;
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   const mainPage = (
     <Page content={
       <div>
-        <Feed edges={edges} tags={group} />
+        <Feed edges={edges} />
         <Pagination
           prevPagePath={prevPagePath}
           nextPagePath={nextPagePath}
@@ -65,6 +65,7 @@ export const query = graphql`
             date
             category
             socialImage
+            tags
           }
           excerpt
         }

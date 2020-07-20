@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from "gatsby";
-import { useSiteMetadata, useTagsList } from '../hooks';
+import { useSiteMetadata } from '../hooks';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
@@ -8,13 +8,12 @@ import Feed from "../components/Feed";
 
 const TagsListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
-  const tags = useTagsList();
   const { edges, group } = data.allMarkdownRemark;
 
   const pageTitle = pageContext.tag === '*' ? '' : `${pageContext.tag}に関する記事一覧`;
   const mainPage = (
       <Page title={pageTitle} content={(
-        <Feed edges={edges} tags={group} />
+        <Feed edges={edges} />
       )}>
       </Page>
   );
@@ -52,6 +51,7 @@ query TagsListTemplate($tag: String!) {
                     date
                     category
                     socialImage
+                    tags
                 }
                 excerpt
             }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { useSiteMetadata, useCategoriesList } from '../hooks';
+import { useSiteMetadata } from '../hooks';
 import Sidebar from '../components/Sidebar';
 import Layout from '../components/Layout';
 import Page from '../components/Page';
@@ -8,13 +8,12 @@ import Feed from "../components/Feed";
 
 const CategoriesListTemplate = ({ data, pageContext }) => {
   const { title, subtitle } = useSiteMetadata();
-  const categories = useCategoriesList();
-  const { edges, group } = data.allMarkdownRemark;
+  const { edges } = data.allMarkdownRemark;
 
   const pageTitle = pageContext.category === '*' ? '' : `${pageContext.category}に関する記事一覧`;
   const mainPage = (
     <Page title={pageTitle} content={(
-      <Feed edges={edges} tags={group} />
+      <Feed edges={edges} />
     )}>
     </Page>
   );
@@ -47,6 +46,7 @@ export const query = graphql`
                         date
                         category
                         socialImage
+                        tags
                     }
                     excerpt
                 }

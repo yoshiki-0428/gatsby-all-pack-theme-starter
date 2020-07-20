@@ -10,6 +10,10 @@ export const TEXT_GATSBY_LINK_H1 = ({ to, children }) =>
     <div tw="text-center">
       <Link tw="text-2xl font-bold text-gray-700 hover:underline" to={to}>{children}</Link>
     </div>;
+export const TEXT_GATSBY_LINK_H3 = ({ to, children }) =>
+    <div tw="text-center">
+      <Link tw="text-base font-bold text-gray-700 hover:underline" to={to}>{children}</Link>
+    </div>;
 export const TEXT_BASE = tw.div`text-gray-700 text-base`;
 export const TEXT_BASE_CENTER = tw.div`text-gray-700 text-base text-center`;
 export const TEXT_GATSBY_LINK = ({ to, children }) =>

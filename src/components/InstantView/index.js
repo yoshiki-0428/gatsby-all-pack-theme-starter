@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import "twin.macro";
 import tw from "twin.macro"
 import ImageWrap from "../Image/ImageWrap";
+import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 
 const InstantView = ({ items, flex }) => {
 
-  const Content = tw.div`px-6 py-4`;
   const ContentText = tw.div`font-bold text-base mb-2 text-center text-gray-800 hover:underline`;
 
   const Width = flex ? tw.div`w-1/2` : tw.div`w-full`;
@@ -21,11 +21,9 @@ const InstantView = ({ items, flex }) => {
                   <ImageWrap
                       item={{ socialImage: item.socialImage, alt: item.alt }}/>
                 </Link>
-                <Content>
-                  <ContentText>
-                    <Link tw="text-gray-700 no-underline" to={item.slug}>{item.title}</Link>
-                  </ContentText>
-                </Content>
+                <SPACER>
+                  <TEXT_GATSBY_LINK_H3 to={item.slug}>{item.title}</TEXT_GATSBY_LINK_H3>
+                </SPACER>
               </div>
             </Width>
         ))}

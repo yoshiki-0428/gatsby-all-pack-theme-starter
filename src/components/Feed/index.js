@@ -11,7 +11,7 @@ import {
   TEXT_GATSBY_LINK_H1,
 } from "../Tailwind";
 
-const Feed = ({ edges, tags }) => {
+const Feed = ({ edges }) => {
   return (
       <div>
         {edges.map((edge) => (
@@ -38,7 +38,9 @@ const Feed = ({ edges, tags }) => {
               <SPACER>
                 <TEXT_BASE_CENTER>{edge.node.excerpt}</TEXT_BASE_CENTER>
                 <BUTTON_CENTER to={edge.node.fields.slug}>READ MORE</BUTTON_CENTER>
-                <Tags tags={tags} urlPrefix={'tags'}/>
+                <Tags tags={edge.node.frontmatter.tags.map(t => {
+                  return { fieldValue: t }
+                })} urlPrefix={'tags'}/>
               </SPACER>
             </CARD>
         ))}
