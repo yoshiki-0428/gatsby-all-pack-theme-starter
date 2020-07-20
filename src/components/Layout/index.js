@@ -22,9 +22,9 @@ const Layout = ({
 
   const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
   const Main = tw.div`container mx-auto`;
-  const Body = tw.div`w-5/6 grid grid-cols-12 gap-10 py-10 mx-auto`;
-  const Article = tw.div`col-span-8`;
-  const Side = tw.div`col-span-4`;
+  const Body = tw.div`w-11/12 grid grid-cols-12 lg:gap-10 gap-6 sm:pt-10 py-10 mx-auto`;
+  const Article = tw.div`lg:col-span-8 col-span-12`;
+  const Side = tw.div`lg:col-span-4 col-span-12`;
   const Footer = tw.div`col-span-12`;
 
   // TODO stub
@@ -79,7 +79,7 @@ const Layout = ({
 };
 
 const TopContents = ({ items }) => {
-  const TopContent = tw.div`col-span-4 bg-white shadow-lg`;
+  const TopContent = tw.div`lg:col-span-4 col-span-12 bg-white shadow-lg`;
 
   return (
       <>

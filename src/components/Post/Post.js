@@ -72,11 +72,6 @@ const Post = ({ post }) => {
             </SPACER>
           </CARD>
       )}
-      <CARD>
-        <SPACER>
-          <Author/>
-        </SPACER>
-      </CARD>
     </div>
   );
 };

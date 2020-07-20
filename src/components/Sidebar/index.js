@@ -14,7 +14,9 @@ const SideBar = ({ toc }) => {
   return (
     <div>
       <CARD>
-        <Author />
+        <SPACER>
+          <Author />
+        </SPACER>
       </CARD>
 
       {popularList.length > 0 && (
