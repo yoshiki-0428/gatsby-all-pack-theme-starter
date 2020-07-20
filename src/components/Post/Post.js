@@ -8,7 +8,7 @@ import moment from "moment";
 import ImageWrap from "../Image/ImageWrap";
 import InstantView from "../InstantView";
 import { kebabCase } from 'lodash/string';
-import {CARD, HR, SPACER, TEXT_BASE_CENTER, TEXT_GATSBY_LINK, TITLE_H1} from "../Tailwind";
+import {CARD, HR, SPACER, TEXT_BASE_CENTER, TEXT_GATSBY_LINK, TITLE_H1, TITLE_H3} from "../Tailwind";
 
 const Post = ({ post }) => {
   const { id, html } = post;
