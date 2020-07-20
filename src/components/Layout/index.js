@@ -52,7 +52,7 @@ const Layout = ({
 
       <Main>
         <Body>
-          {top && (<TopContent items={items} />)}
+          {top && (<TopContents items={items} />)}
           <Article>{main}</Article>
           <Side>{side}</Side>
         </Body>
@@ -78,13 +78,13 @@ const Layout = ({
   );
 };
 
-const TopContent = ({ items }) => {
-  const TopContents = tw.div`col-span-4 bg-white shadow-lg`;
+const TopContents = ({ items }) => {
+  const TopContent = tw.div`col-span-4 bg-white shadow-lg`;
 
   return (
       <>
         {items.slice(0, 3).map(item => (
-            <TopContents>
+            <TopContent>
               <div tw="rounded overflow-hidden bg-white">
                 <Link to={item.slug}>
                   <ImageWrap item={{ socialImage: item.socialImage, alt: '' }}/>
@@ -93,7 +93,7 @@ const TopContent = ({ items }) => {
                   <TEXT_GATSBY_LINK_H3 to={item.slug}>{item.title}</TEXT_GATSBY_LINK_H3>
                 </SPACER>
               </div>
-            </TopContents>
+            </TopContent>
         ))}
       </>
   );

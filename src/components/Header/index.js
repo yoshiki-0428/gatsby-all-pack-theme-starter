@@ -8,7 +8,7 @@ import {orderBy} from "lodash/collection";
 
 const Header = ({}) => {
   const StickyDiv = tw.div`sticky top-0 z-20`;
-  const Nav = tw.nav`flex items-center justify-between flex-wrap bg-white shadow-lg p-6`;
+  const Nav = tw.nav`flex items-center justify-between flex-wrap bg-white shadow-lg p-4`;
   const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-6`;
   const Svg = tw.svg`fill-current w-4 h-4`;
   const Content = tw.div`w-1/2 block flex-grow flex items-center`;

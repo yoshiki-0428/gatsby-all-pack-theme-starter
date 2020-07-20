@@ -4,13 +4,11 @@ import Tags from '../Tags';
 import { ShareSns } from "../ShareSns/ShareSns";
 import Disqus from 'gatsby-plugin-disqus';
 import {useAllMarkdownRemarkForPopularList, useSiteMetadata} from "../../hooks";
-import tw from "twin.macro";
-import {Link} from "gatsby";
 import moment from "moment";
 import ImageWrap from "../Image/ImageWrap";
 import InstantView from "../InstantView";
 import { kebabCase } from 'lodash/string';
-import {HR, TITLE_H3} from "../Tailwind";
+import {CARD, HR, SPACER, TEXT_BASE_CENTER, TEXT_GATSBY_LINK, TITLE_H1} from "../Tailwind";
 
 const Post = ({ post }) => {
   const { id, html } = post;
@@ -30,63 +28,55 @@ const Post = ({ post }) => {
     return { fieldValue: tag }
   });
 
-  // TODO 別コンポーねんと？
-  const Inner = tw.div`mb-10`;
-  const Card = tw.div`p-4 bg-white rounded-b shadow-md`;
-  const ContentText = tw.div`font-bold text-2xl mb-2 text-center text-gray-800`;
-  const ContentDate = tw.div`text-base mb-2 text-center`;
-  const ContentCategory = tw.div`text-base mb-2 text-center text-blue-600`;
-
   return (
     <div>
-      {/*content*/}
-      <Card>
-        <ContentDate>
-          <time dateTime={moment(date).format('YYYY/MM/DD')}>
-            {moment(date).format('YYYY/MM/DD')}
-          </time>
-        </ContentDate>
+      <CARD mb>
+        <SPACER>
+          <TEXT_BASE_CENTER>
+            <time dateTime={moment(date).format('YYYY/MM/DD')}>
+              {moment(date).format('YYYY/MM/DD')}
+            </time>
+          </TEXT_BASE_CENTER>
 
-        <ContentText>{title}</ContentText>
-        <ContentCategory>
-          <Link tw="no-underline" to={`category/${kebabCase(category)}`}>
-            {category}
-          </Link>
-        </ContentCategory>
-      </Card>
+          <TITLE_H1>{title}</TITLE_H1>
+          <TEXT_GATSBY_LINK to={`category/${kebabCase(category)}`}>{category}</TEXT_GATSBY_LINK>
+        </SPACER>
+      </CARD>
       <ImageWrap item={{socialImage: socialImage}} size={'normal'} />
-      <Card>
-        <div>
-          <div className={'content'} dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-        <Tags tags={tags} urlPrefix={'tags'} />
-        <ShareSns articleUrl={url + slug} articleTitle={title} />
-      </Card>
-      {/*content*/}
+      <CARD>
+        <SPACER>
+          <div>
+            <div className={'content'} dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+          <Tags tags={tags} urlPrefix={'tags'} />
+          <ShareSns articleUrl={url + slug} articleTitle={title} />
+        </SPACER>
+      </CARD>
 
-      <Inner>
-        <Card>
+      <CARD>
+        <SPACER>
           <Disqus
-              identifier={id}
-              title={title}
-              url={url + slug}
-          />
-        </Card>
-      </Inner>
+                identifier={id}
+                title={title}
+                url={url + slug}
+            />
+        </SPACER>
+      </CARD>
 
       {relatedArticles.length > 0 && (
-          <Inner>
-            <Card>
+          <CARD>
+            <SPACER>
               <TITLE_H3>Related Links</TITLE_H3>
               <HR/>
               <InstantView flex items={relatedArticles} />
-            </Card>
-          </Inner>
+            </SPACER>
+          </CARD>
       )}
-
-      <Inner>
-        <Author/>
-      </Inner>
+      <CARD>
+        <SPACER>
+          <Author/>
+        </SPACER>
+      </CARD>
     </div>
   );
 };
