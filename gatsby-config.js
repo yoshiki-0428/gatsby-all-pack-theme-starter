@@ -1,4 +1,3 @@
-// const siteConfig = require('./config.js');
 const postCssPlugins = require('./postcss-config.js');
 
 const resolveConfig = require("tailwindcss/resolveConfig");
@@ -9,14 +8,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
-    url: siteConfig.url,
-    title: siteConfig.title,
-    subtitle: siteConfig.subtitle,
-    copyright: siteConfig.copyright,
-    disqusShortname: siteConfig.disqusShortname,
-    menu: siteConfig.menu,
-    topContents: siteConfig.topContents,
-    author: siteConfig.author
+    ...siteConfig
   },
   plugins: [
     {

@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const siteConfig = require('../../../config.js');
+const siteConfig = require('../../../loadYaml.js');
 
 module.exports = async (graphql, actions) => {
   const { createPage } = actions;
