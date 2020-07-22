@@ -24,7 +24,7 @@ const SearchComponent = () => {
       config.algoliaSearchApiKey
   );
 
-  const FullScreen = tw.div`w-screen absolute inset-0 z-10`;
+  const FullScreen = tw.div`w-screen absolute inset-0 z-10 bg-gray-800 bg-opacity-75`;
   return (
     <InstantSearch
         indexName={config.algoliaIndexName}
@@ -59,9 +59,9 @@ function SearchResult(props) {
   }
 
   return (
-      <div tw="flex justify-center pt-48">
+      <div tw="flex justify-center pt-24">
         <div tw="w-1/2"/>
-        <div tw="bg-white p-2 rounded-sm shadow-xl border-solid border border-gray-800 ">
+        <div tw="bg-white p-2 rounded-sm shadow-xl border-solid border border-gray-800">
           {error ? <div>{error.message}</div> : null}
           {searchResults && searchResults.nbHits > 0 ? (
               <div>
