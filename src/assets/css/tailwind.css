@@ -33,6 +33,7 @@
     @apply leading-relaxed;
 }
 .content a {
+    @apply break-all;
     @apply text-blue-700 underline;
 }
 .content a > svg {
@@ -45,6 +46,7 @@
     @apply rounded-sm;
 }
 .content table {
+    @apply border-2;
     @apply block overflow-scroll;
     @apply my-6;
     @apply table-auto;

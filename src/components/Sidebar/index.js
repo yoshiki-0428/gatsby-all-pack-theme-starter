@@ -5,6 +5,7 @@ import Author from "../Author";
 import Adsense from "../Adsense";
 import InstantView from "../InstantView";
 import {CARD, HR, SPACER, TITLE_H3} from "../Tailwind";
+import "twin.macro";
 
 const SideBar = ({ toc }) => {
   const popularList = usePopularList();
@@ -47,13 +48,15 @@ const SideBar = ({ toc }) => {
       </CARD>
 
       {toc &&(
-        <CARD>
-          <SPACER>
-            <TITLE_H3>目次</TITLE_H3>
-            <HR/>
-            {toc}
-          </SPACER>
-        </CARD>
+          <div tw="hidden lg:block">
+            <CARD>
+              <SPACER>
+                <TITLE_H3>目次</TITLE_H3>
+                <HR/>
+                {toc}
+              </SPACER>
+            </CARD>
+          </div>
       )}
       <Adsense/>
     </div>
