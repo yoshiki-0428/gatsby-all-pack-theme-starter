@@ -9,7 +9,6 @@ import {
   PoweredBy,
   connectStateResults,
 } from 'react-instantsearch-dom';
-import "twin.macro"
 import { Link } from 'gatsby';
 import tw from "twin.macro"
 

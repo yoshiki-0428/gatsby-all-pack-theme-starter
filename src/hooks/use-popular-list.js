@@ -19,8 +19,6 @@ const usePopularList = () => {
 
   const nodes = useAllMarkdownRemarkForPopularList();
   const pathList = allIPopularPage.nodes.map(p => p.path);
-  // TODO debug
-  pathList.push('/posts/try-eventsource-client1');
 
   const list = nodes
       .filter(a => pathList.includes(a.fields.slug))

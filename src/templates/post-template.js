@@ -13,7 +13,6 @@ const PostTemplate = ({ data }) => {
   const metaDescription = postDescription !== null ? excerpt : siteSubtitle;
 
   const main = <Post post={data.markdownRemark} />;
-  // TODO CSS Design
   const toc = <div className={'toc'} dangerouslySetInnerHTML={{ __html: data.markdownRemark.tableOfContents }}/>;
   const side = <Sidebar toc={toc}/>;
   return (

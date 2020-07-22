@@ -7,8 +7,6 @@ import {Link} from "gatsby";
 import ImageWrap from "../Image/ImageWrap";
 import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 
-
-
 const Layout = ({
     main,
     side,
@@ -17,7 +15,7 @@ const Layout = ({
     socialImage,
     top = false
   }) => {
-  const { author, copyright } = useSiteMetadata();
+  const { author, copyright, topContents } = useSiteMetadata();
   const metaImage = socialImage != null ? socialImage : author.photo;
 
   const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
@@ -27,32 +25,14 @@ const Layout = ({
   const Side = tw.div`lg:col-span-4 col-span-12`;
   const Footer = tw.div`col-span-12`;
 
-  // TODO stub
-  const items = [
-    {
-      slug: '/posts/try-eventsource-client1',
-      socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/',
-      title: 'AAAAAbbbbaaaaaあああああ',
-    },
-    {
-      slug: '/posts/try-eventsource-client1',
-      socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/',
-      title: 'AAAAAbbbbaaaaaあああああ',
-    },
-    {
-      slug: '/posts/try-eventsource-client1',
-      socialImage: 'https://ucarecdn.com/b2035108-5e4e-4569-be86-b9bfc2f7a1aa/',
-      title: 'AAAAAbbbbaaaaaあああああ',
-    }
-  ];
-
   return (
     <Div>
       <Header/>
 
       <Main>
         <Body>
-          {top && (<TopContents items={items} />)}
+          {/*TODO Pathからページデータを取得するロジックを作る*/}
+          {top && topContents.length === 3 && (<TopContents />)}
           <Article>{main}</Article>
           <Side>{side}</Side>
         </Body>

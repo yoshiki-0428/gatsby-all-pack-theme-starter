@@ -1,9 +1,9 @@
-const siteConfig = require('./config.js');
+// const siteConfig = require('./config.js');
 const postCssPlugins = require('./postcss-config.js');
 
 const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
-
+const siteConfig = require("./loadYaml.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
@@ -15,6 +15,7 @@ module.exports = {
     copyright: siteConfig.copyright,
     disqusShortname: siteConfig.disqusShortname,
     menu: siteConfig.menu,
+    topContents: siteConfig.topContents,
     author: siteConfig.author
   },
   plugins: [
@@ -208,7 +209,7 @@ module.exports = {
                 }),
             },
         ],
-        chunkSize: 10000, // default: 1000
+        chunkSize: 10000,
       }
     },
     // TODO env

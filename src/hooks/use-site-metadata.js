@@ -32,6 +32,9 @@ const useSiteMetadata = () => {
               label
               path
             }
+            topContents {
+              url
+            }
             url
             title
             subtitle

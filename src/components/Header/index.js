@@ -19,7 +19,6 @@ const Header = ({}) => {
     </Link>;
 
   const categories = useCategoriesList();
-  // TODO max categoryを定数化
   const sortTotalCount = (items) => orderBy(items, ['totalCount', 'fieldValue'], ['desc']).slice(0, 8);
 
   return (

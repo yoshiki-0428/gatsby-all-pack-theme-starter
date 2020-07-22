@@ -75,6 +75,7 @@
     "google-auth-library": "^6.0.5",
     "googleapis": "^54.0.0",
     "invariant": "^2.2.4",
+    "js-yaml": "^3.14.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "netlify-cms-app": "^2.12.12",

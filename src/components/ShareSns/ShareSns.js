@@ -7,25 +7,25 @@ import TwitterShareButton from 'react-share/es/TwitterShareButton'
 import TwitterIcon from 'react-share/es/TwitterIcon'
 import LineShareButton from 'react-share/es/LineShareButton'
 import LineIcon from 'react-share/es/LineIcon'
-import "./ShareSns.css"
+import "twin.macro"
 
 export const ShareSns = ({ articleUrl, articleTitle }) => (
-  <div className={'ShareSns'}>
+  <div tw="text-center">
     <div>
-      <FacebookShareButton url={articleUrl}>
+      <FacebookShareButton tw="m-2" url={articleUrl}>
         <FacebookIcon size={32} round />
       </FacebookShareButton>
 
-      <LineShareButton url={articleUrl}>
+      <LineShareButton tw="m-2" url={articleUrl}>
         <LineIcon size={32} round />
       </LineShareButton>
 
-      <LinkedinShareButton url={articleUrl}>
+      <LinkedinShareButton tw="m-2" url={articleUrl}>
         <LinkedinIcon title={articleTitle} size={32} round />
       </LinkedinShareButton>
 
       {/*TODO env 他のアイコン*/}
-      <TwitterShareButton title={articleTitle} via="yoshiki__0428" url={articleUrl}>
+      <TwitterShareButton tw="m-2" title={articleTitle} via="yoshiki__0428" url={articleUrl}>
         <TwitterIcon size={32} round />
       </TwitterShareButton>
     </div>
