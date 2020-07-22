@@ -9,6 +9,7 @@ locale: "ja"
 media_library:
   name: uploadcare
   config:
+    # change uploadcare public key
     publicKey: 012e3d35e94b8223b2fc
     multiple: false
     tabs: 'file camera url gphotos instagram evernote flickr'

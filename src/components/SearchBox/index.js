@@ -10,7 +10,7 @@ import {
   connectStateResults,
 } from 'react-instantsearch-dom';
 import { Link } from 'gatsby';
-import tw from "twin.macro"
+import tw from "twin.macro";
 
 // TODO env
 const searchClient = algoliasearch(
