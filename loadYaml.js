@@ -9,9 +9,17 @@ function loadYamlFile(filename) {
   return yaml.safeLoad(yamlText);
 }
 
-const siteConfig = loadYamlFile('content/settings/global.yml');
+const config = loadYamlFile('content/settings/global.yml');
 
 module.exports = {
-  ...siteConfig
+  siteConfig: {
+    ...config.siteConfig
+  },
+  siteDesign: {
+    ...config.siteDesign
+  },
+  secretConfig: {
+    ...config.secretConfig
+  }
 };
 

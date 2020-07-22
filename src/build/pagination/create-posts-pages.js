@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const siteConfig = require('../../../loadYaml.js');
+const config = require('../../../loadYaml.js');
 
 module.exports = async (graphql, actions) => {
   const { createPage } = actions;
@@ -14,7 +14,7 @@ module.exports = async (graphql, actions) => {
     }
   `);
 
-  const { postsPerPage } = siteConfig;
+  const { postsPerPage } = config.siteConfig;
   const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / postsPerPage);
 
   for (let i = 0; i < numPages; i += 1) {

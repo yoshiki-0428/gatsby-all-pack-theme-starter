@@ -3,12 +3,14 @@ const postCssPlugins = require('./postcss-config.js');
 const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
 const siteConfig = require("./loadYaml.js");
+const config = require("./loadYaml.js");
 const fullConfig = resolveConfig(tailwindConfig);
+console.log('tailwindcss/resolveConfig', fullConfig);
 
 module.exports = {
-  pathPrefix: siteConfig.pathPrefix,
+  pathPrefix: config.siteConfig.pathPrefix,
   siteMetadata: {
-    ...siteConfig
+    ...config.siteConfig
   },
   plugins: [
     {
@@ -89,7 +91,7 @@ module.exports = {
               }
             `,
           output: '/rss.xml',
-          title: siteConfig.title
+          title: config.siteConfig.title
         }]
       }
     },
@@ -145,19 +147,18 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: [siteConfig.googleAnalyticsId],
+        trackingIds: [config.secretConfig.googleAnalyticsId],
         pluginConfig: {
           head: true,
         },
       },
     },
-    // TODO algoria env
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: 'XIKSJSCPJ3',
-        apiKey: 'bfdeafc9b0b7b7d3b3049e065830b1b7',
-        indexName: 'BLOG', // for all queries
+        appId: config.secretConfig.algoliaAppId,
+        apiKey: config.secretConfig.algoliaApiKey,
+        indexName: config.secretConfig.algoliaIndexName,
         queries: [
             {
               query: `{
@@ -204,11 +205,10 @@ module.exports = {
         chunkSize: 10000,
       }
     },
-    // TODO env
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `tech-blog-yoshikiohashi`
+        shortname: config.siteConfig.disqusShortname
       }
     },
     {
@@ -245,8 +245,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: siteConfig.title,
-        short_name: siteConfig.title,
+        name: config.siteConfig.title,
+        short_name: config.siteConfig.title,
         start_url: '/',
         background_color: '#FFF',
         theme_color: '#F7A046',

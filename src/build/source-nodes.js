@@ -1,15 +1,16 @@
-const {GoogleAuth} = require("google-auth-library");
-const {GoogleApis} = require("googleapis");
+const config = require("../../loadYaml.js");
+const { GoogleAuth } = require("google-auth-library");
+const { GoogleApis } = require("googleapis");
 
-// TODO env
 const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter }) => {
   const { createNode } = actions;
   await addPopularPageNodes();
   // `PopularPage` のノードを追加する
   async function addPopularPageNodes() {
-    const CREDS = '';
-    const VIEW_ID = '';
+    const CREDS = config.secretConfig.googleAnalyticsCred;
+    const VIEW_ID = config.secretConfig.googleAnalyticsViewId;
     if (!CREDS || !VIEW_ID) {
+      reporter.warn('Not set secretConfig.googleAnalyticsCred || secretConfig.googleAnalyticsViewId');
       return
     }
     const auth = new GoogleAuth();
@@ -27,8 +28,8 @@ const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter
             viewId: VIEW_ID,
             dateRanges: [
               {
-                startDate: '60daysAgo',
-                endDate: 'today',
+                startDate: config.siteConfig.popularView.googleAnalyticsStartDate,
+                endDate: config.siteConfig.popularView.googleAnalyticsEndDate,
               }
             ],
             dimensions: [
@@ -41,15 +42,15 @@ const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter
             ],
             metrics: [
               {
-                expression: 'ga:sessions',
+                expression: config.siteConfig.popularView.googleAnalyticsMetrics,
               }
             ],
-            filtersExpression: `ga:pagePath=~^/posts/`,
+            filtersExpression: `ga:pagePath=~^${config.siteConfig.popularView.googleAnalyticsFiltersUrl}`,
             orderBys: {
-              fieldName: 'ga:sessions',
+              fieldName: config.siteConfig.popularView.googleAnalyticsMetrics,
               sortOrder: 'DESCENDING',
             },
-            pageSize: 20
+            pageSize: config.siteConfig.popularView.googleAnalyticsPageSize
           }
         ]
       }
@@ -62,6 +63,8 @@ const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter
 
     const [report] = res.data.reports;
     const rows = report.data.rows;
+
+    console.log('gaaaaa', JSON.stringify(res.data));
 
     rows.forEach(r => {
       const data = {

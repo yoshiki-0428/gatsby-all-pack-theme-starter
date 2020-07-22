@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Page from '../components/Page';
 import { useSiteMetadata } from '../hooks';
-import {CARD} from "../components/Tailwind";
+import {CARD, SPACER} from "../components/Tailwind";
 
 const PageTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
@@ -15,7 +15,9 @@ const PageTemplate = ({ data }) => {
 
   const mainPage = (
     <Page title={pageTitle} content={(
-        <CARD><div className={'content'} dangerouslySetInnerHTML={{ __html: pageBody }} /></CARD>
+        <CARD><SPACER>
+          <div className={'content'} dangerouslySetInnerHTML={{ __html: pageBody }} />
+        </SPACER></CARD>
     )}/>
   );
 
