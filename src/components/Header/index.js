@@ -7,8 +7,8 @@ import { Link } from 'gatsby';
 import {orderBy} from "lodash/collection";
 
 const Header = ({}) => {
-  const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-20`;
-  const Nav = tw.nav`flex items-center justify-between flex-wrap bg-white shadow-lg p-4`;
+  const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-20 bg-white shadow-lg`;
+  const Nav = tw.nav`flex items-center justify-between flex-wrap p-4 container mx-auto`;
   const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-6`;
   const Svg = tw.svg`fill-current w-4 h-4`;
   const Content = tw.div`hidden md:w-1/2 md:flex-grow md:flex md:items-center`;
