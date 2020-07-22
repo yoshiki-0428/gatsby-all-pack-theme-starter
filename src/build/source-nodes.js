@@ -7,7 +7,7 @@ const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter
   await addPopularPageNodes();
   // `PopularPage` のノードを追加する
   async function addPopularPageNodes() {
-    const CREDS = config.secretConfig.googleAnalyticsCred;
+    const CREDS = config.secretKey.googleAnalyticsCred;
     const VIEW_ID = config.secretConfig.googleAnalyticsViewId;
     if (!CREDS || !VIEW_ID) {
       reporter.warn('Not set secretConfig.googleAnalyticsCred || secretConfig.googleAnalyticsViewId');

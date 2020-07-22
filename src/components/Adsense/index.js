@@ -1,14 +1,17 @@
 import React from "react";
 import AdSense from 'react-adsense';
+import { useSiteSecretData } from "../../hooks/";
 
-// TODO env
-const Adsense = () => (
-    <div>
-      <AdSense.Google
-          client="ca-pub-10752010519143941"
-          slot="1075201051914394"
-          format="rectangle"
-      />
-    </div>
-);
+const Adsense = () => {
+  const config = useSiteSecretData();
+  return (
+      <div>
+        <AdSense.Google
+            client={config.googleAdsnseClientId}
+            slot={config.googleAdsnseClientSlot}
+            format="rectangle"
+        />
+      </div>
+  )
+};
 export default Adsense;

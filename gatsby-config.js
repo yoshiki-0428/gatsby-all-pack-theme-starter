@@ -10,9 +10,15 @@ console.log('tailwindcss/resolveConfig', fullConfig);
 module.exports = {
   pathPrefix: config.siteConfig.pathPrefix,
   siteMetadata: {
-    ...config.siteConfig,
-    ...config.siteDesign,
-    ...config.secretConfig
+    siteConfig: {
+      ...config.siteConfig,
+    },
+    siteDesign: {
+      ...config.siteDesign,
+    },
+    secretConfig: {
+      ...config.secretConfig
+    }
   },
   plugins: [
     {
@@ -159,7 +165,7 @@ module.exports = {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: config.secretConfig.algoliaAppId,
-        apiKey: config.secretConfig.algoliaApiKey,
+        apiKey: config.secretKey.algoliaAdminApiKey,
         indexName: config.secretConfig.algoliaIndexName,
         queries: [
             {

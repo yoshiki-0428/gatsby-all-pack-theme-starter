@@ -11,22 +11,23 @@ import {
 } from 'react-instantsearch-dom';
 import { Link } from 'gatsby';
 import tw from "twin.macro";
-
-// TODO env
-const searchClient = algoliasearch(
-    'XIKSJSCPJ3',
-    'a0eb781d9e8354258d74c311a05f0cc1'
-);
+import { useSiteSecretData } from "../../hooks";
 
 const SearchComponent = () => {
   const [showResults, setShowResults] = React.useState(false);
   const show = () => setShowResults(true);
   const hidden = () => setShowResults(false);
 
+  const config = useSiteSecretData();
+  const searchClient = algoliasearch(
+      config.algoliaAppId,
+      config.algoliaSearchApiKey
+  );
+
   const FullScreen = tw.div`w-screen absolute inset-0 z-10`;
   return (
     <InstantSearch
-        indexName={'BLOG'}
+        indexName={config.algoliaIndexName}
         searchClient={searchClient}
     >
       <Configure

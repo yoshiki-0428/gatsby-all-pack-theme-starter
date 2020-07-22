@@ -50,11 +50,12 @@ secretConfig:
   algoliaAppId: 'XIKSJSCPJ3'
   algoliaSearchApiKey: 'a0eb781d9e8354258d74c311a05f0cc1'
   algoliaIndexName: 'BLOG'
-  googleAdsnseClientId: ''
-  googleAdsnseClientSlot: ''
+  googleAdsnseClientId: 'ca-pub-10752010519143941'
+  googleAdsnseClientSlot: '1075201051914394'
   googleAnalyticsId: ''
   googleAnalyticsViewId: '219075804'
 
+# envにしても良さそう
 secretKey:
   algoliaAdminApiKey: 'bfdeafc9b0b7b7d3b3049e065830b1b7'
   googleAnalyticsCred: '{
