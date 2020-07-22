@@ -10,7 +10,9 @@ console.log('tailwindcss/resolveConfig', fullConfig);
 module.exports = {
   pathPrefix: config.siteConfig.pathPrefix,
   siteMetadata: {
-    ...config.siteConfig
+    ...config.siteConfig,
+    ...config.siteDesign,
+    ...config.secretConfig
   },
   plugins: [
     {

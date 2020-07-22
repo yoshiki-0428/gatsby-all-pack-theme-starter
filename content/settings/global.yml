@@ -41,7 +41,6 @@ siteConfig:
     googleAnalyticsFiltersUrl: '/posts/'
     googleAnalyticsPageSize: 5
 
-
 siteDesign:
   primaryColor: ""
   accentColor: ""
@@ -49,12 +48,15 @@ siteDesign:
 
 secretConfig:
   algoliaAppId: 'XIKSJSCPJ3'
-  algoliaAdminApiKey: 'bfdeafc9b0b7b7d3b3049e065830b1b7' secret
   algoliaSearchApiKey: 'a0eb781d9e8354258d74c311a05f0cc1'
   algoliaIndexName: 'BLOG'
   googleAdsnseClientId: ''
   googleAdsnseClientSlot: ''
   googleAnalyticsId: ''
+  googleAnalyticsViewId: '219075804'
+
+secretKey:
+  algoliaAdminApiKey: 'bfdeafc9b0b7b7d3b3049e065830b1b7'
   googleAnalyticsCred: '{
                           "type": "service_account",
                           "project_id": "gatsby-283414",
@@ -66,5 +68,4 @@ secretConfig:
                           "token_uri": "https://oauth2.googleapis.com/token",
                           "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
                           "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ga-access%40gatsby-283414.iam.gserviceaccount.com"
-                        }'  secret
-  googleAnalyticsViewId: '219075804'
+                        }'

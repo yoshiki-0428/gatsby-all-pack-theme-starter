@@ -20,6 +20,9 @@ module.exports = {
   },
   secretConfig: {
     ...config.secretConfig
+  },
+  secretKey: {
+    ...config.secretKey
   }
 };
 
