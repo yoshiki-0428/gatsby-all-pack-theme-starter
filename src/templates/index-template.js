@@ -63,6 +63,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            updatedDate
             category
             socialImage
             tags

@@ -31,6 +31,7 @@ export const query = graphql`
       }
       frontmatter {
         date
+        updatedDate
         tags
         title
         socialImage

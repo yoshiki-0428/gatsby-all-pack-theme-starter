@@ -21,6 +21,14 @@ const Feed = ({ edges }) => {
                   <time dateTime={moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}>
                     {moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}
                   </time>
+                  {edge.node.frontmatter.updatedDate && (
+                      <> (更新日:
+                        <time dateTime={moment(edge.node.frontmatter.updatedDate).format('YYYY/MM/DD')}>
+                          {moment(edge.node.frontmatter.updatedDate).format('YYYY/MM/DD')}
+                        </time>
+                        )
+                      </>
+                  )}
                 </TEXT_BASE_CENTER>
                 <TEXT_GATSBY_LINK_H1 to={edge.node.fields.slug}>
                   {edge.node.frontmatter.title}

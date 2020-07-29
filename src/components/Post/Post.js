@@ -13,7 +13,7 @@ import {CARD, HR, SPACER, TEXT_BASE_CENTER, TEXT_GATSBY_LINK, TITLE_H1, TITLE_H3
 const Post = ({ post }) => {
   const { id, html } = post;
   const { slug } = post.fields;
-  const { title, date, socialImage, category, relatedLinks } = post.frontmatter;
+  const { title, date, updatedDate, socialImage, category, relatedLinks } = post.frontmatter;
   const { url } = useSiteMetadata();
   const articles = useAllMarkdownRemarkForPopularList();
 
@@ -36,6 +36,14 @@ const Post = ({ post }) => {
             <time dateTime={moment(date).format('YYYY/MM/DD')}>
               {moment(date).format('YYYY/MM/DD')}
             </time>
+            {updatedDate && (
+                <> (更新日:
+                  <time dateTime={moment(updatedDate).format('YYYY/MM/DD')}>
+                    {moment(updatedDate).format('YYYY/MM/DD')}
+                  </time>
+                  )
+                </>
+            )}
           </TEXT_BASE_CENTER>
 
           <TITLE_H1>{title}</TITLE_H1>
