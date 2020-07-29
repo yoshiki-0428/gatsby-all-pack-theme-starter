@@ -90,8 +90,8 @@
     width: 100%;
     position: relative;
     background-color: #fff;
-    border: 1px solid #c4c8d8;
-    border-radius: 5px;
+    @apply border-0 border-b-4 border-blue-700 !important;
+    border-radius: 0 !important;
 }
 .ais-SearchBox-submit {
     left: .3rem;

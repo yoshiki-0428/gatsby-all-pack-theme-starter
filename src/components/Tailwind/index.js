@@ -50,3 +50,12 @@ export const CENTER_PHOTO = ({ photo, name }) => {
       </ImgWrap>
   )
 };
+export const CENTER_PHOTO_NORMAL = ({ photo, name }) => {
+  const ImgWrap = tw.span`flex justify-between`;
+  const AuthorImg = tw.img`p-0 m-0 md:h-16`;
+  return (
+      <ImgWrap>
+        <div/><AuthorImg src={photo} alt={name} /><div/>
+      </ImgWrap>
+  )
+};

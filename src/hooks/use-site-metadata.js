@@ -41,6 +41,7 @@ const useSiteMetadata = () => {
               subtitle
               copyright
               disqusShortname
+              headerImage
             }
           }
         }

@@ -5,6 +5,7 @@ siteConfig:
   subtitle: 'フリーランスWebエンジニアYoshikiOhashiのTech Blog'
   copyright: '© 2020 Yoshiki Ohashi All rights reserved.'
   disqusShortname: 'tech-blog-yoshikiohashi'
+  headerImage: '/media/header.png'
   postsPerPage: 10
   menu:
     -
@@ -55,7 +56,7 @@ secretConfig:
   googleAnalyticsId: ''
   googleAnalyticsViewId: '219075804'
 
-# envにしても良さそう
+# TODO envにしても良さそう
 secretKey:
   algoliaAdminApiKey: 'bfdeafc9b0b7b7d3b3049e065830b1b7'
   googleAnalyticsCred: '{

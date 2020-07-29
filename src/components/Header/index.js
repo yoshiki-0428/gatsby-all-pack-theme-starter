@@ -1,20 +1,23 @@
 import React from 'react';
 import tw from "twin.macro"
 import SearchComponent from "../SearchBox";
-import {useCategoriesList} from "../../hooks";
+import { useCategoriesList, useSiteMetadata } from "../../hooks";
 import { kebabCase } from 'lodash/string';
 import { Link } from 'gatsby';
 import {orderBy} from "lodash/collection";
+import { CENTER_PHOTO_NORMAL } from "../Tailwind";
 
 const Header = ({}) => {
+  const { headerImage } = useSiteMetadata();
+
   const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-20 bg-white shadow-lg`;
-  const Nav = tw.nav`flex items-center justify-between flex-wrap p-4 container mx-auto`;
-  const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-6`;
+  const Nav = tw.nav`flex items-center justify-between flex-wrap container mx-auto px-8`;
+  const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-4`;
   const Svg = tw.svg`fill-current w-4 h-4`;
   const Content = tw.div`hidden md:w-1/2 md:flex-grow md:flex md:items-center`;
   const ContentInner = tw.div`text-base flex-grow flex-grow`;
   const NAV_GATSBY_LINK = ({ to, children }) =>
-    <Link tw="block inline-block mr-4 text-xl font-bold text-gray-700 hover:text-blue-700 border-b-2 border-white hover:border-b-2 hover:border-blue-700 uppercase" to={to}>
+    <Link tw="block inline-block mr-4 text-xl font-bold text-gray-700 hover:text-blue-700 border-b-4 border-white hover:border-b-4 hover:border-blue-700 uppercase" to={to}>
       {children}
     </Link>;
 
@@ -23,6 +26,8 @@ const Header = ({}) => {
 
   return (
     <StickyDiv>
+      {headerImage && (<CENTER_PHOTO_NORMAL photo={headerImage} name={'header'}/>)}
+
       <Nav>
         <Link to={'/'}>
           <SvgWrap>
