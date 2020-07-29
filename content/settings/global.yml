@@ -25,7 +25,7 @@ siteConfig:
       telegram: ""
       twitter: "yoshiki__0428"
       github: "yoshiki-0428"
-      rss: ""
+      rss: "/rss.xml"
       vkontakte: ""
       linkedin: ""
       instagram: ""
