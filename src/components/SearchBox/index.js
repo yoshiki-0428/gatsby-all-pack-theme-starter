@@ -31,7 +31,7 @@ const SearchComponent = () => {
         searchClient={searchClient}
     >
       <Configure
-        hitsPerPage={5}
+        hitsPerPage={3}
         removeStopWords
         analytics
         analyticsTags={['site-search']}
@@ -54,10 +54,6 @@ export default SearchComponent;
 function SearchResult(props) {
   const { searchState, searchResults, error } = props;
 
-  if (searchState && !searchState.query) {
-    return null;
-  }
-
   return (
       <div tw="flex justify-center pt-24">
         <div tw="w-1/2"/>
@@ -65,7 +61,7 @@ function SearchResult(props) {
           {error ? <div>{error.message}</div> : null}
           {searchResults && searchResults.nbHits > 0 ? (
               <div>
-                <div tw="font-bold text-xl mb-2 text-center text-gray-800">{searchState.query}の検索結果</div>
+                <div tw="font-bold text-xl mb-2 text-center text-gray-800">{searchState.query} 検索結果</div>
                 <Hits hitComponent={Hit}/>
                 <PoweredBy/>
               </div>
