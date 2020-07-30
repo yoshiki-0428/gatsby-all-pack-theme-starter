@@ -9,7 +9,7 @@ const Index = ({
   hasNextPage,
   hasPrevPage
 }) => {
-  const Button = tw.button`bg-transparent py-2 px-4 border border-gray-500 rounded`;
+  const Button = tw.button`bg-transparent py-2 px-4 border border-base-gray rounded`;
 
   return (
     <div tw="mt-2 flex">

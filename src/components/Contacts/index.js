@@ -9,7 +9,7 @@ const Contacts = ({ contacts }) => (
         {Object.keys(contacts)
             .filter((c) => c !== '')
             .map((name) => (!contacts[name] ? null : (
-                <li tw="m-1 rounded-full h-8 w-8 flex items-center justify-center border-solid border border-gray-800 hover:text-blue-500" key={name}>
+                <li tw="m-1 rounded-full h-8 w-8 flex items-center justify-center border-solid border border-gray-800 hover:text-primary" key={name}>
                   <a
                       tw="no-underline"
                       href={getContactHref(name, contacts[name])}

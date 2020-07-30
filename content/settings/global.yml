@@ -6,7 +6,7 @@ siteConfig:
   copyright: '© 2020 Yoshiki Ohashi All rights reserved.'
   disqusShortname: 'tech-blog-yoshikiohashi'
   headerImage: '/media/header.png'
-  postsPerPage: 10
+  postsPerPage: 3
   menu:
     -
       label: "About me"
@@ -43,9 +43,9 @@ siteConfig:
     googleAnalyticsPageSize: 5
 
 siteDesign:
-  primaryColor: ""
-  accentColor: ""
-  baseColor: ""
+  primary: "#FF2B3C"
+  accent: ""
+  base-gray: ""
 
 secretConfig:
   algoliaAppId: 'XIKSJSCPJ3'

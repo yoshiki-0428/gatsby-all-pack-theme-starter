@@ -2,10 +2,8 @@ const postCssPlugins = require('./postcss-config.js');
 
 const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
-const siteConfig = require("./loadYaml.js");
 const config = require("./loadYaml.js");
 const fullConfig = resolveConfig(tailwindConfig);
-console.log('tailwindcss/resolveConfig', fullConfig);
 
 module.exports = {
   pathPrefix: config.siteConfig.pathPrefix,

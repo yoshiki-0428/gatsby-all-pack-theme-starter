@@ -6,7 +6,7 @@ const Menu = ({ items }) => {
   return (
       <div tw="m-2">
         {items.map((item) => (
-            <div key={item.path} tw="p-1 text-right text-base text-blue-600">
+            <div key={item.path} tw="p-1 text-right text-base text-accent">
               {item.path.match('http') ? (
                       <a href={item.path}>
                         {item.label} >

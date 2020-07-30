@@ -18,7 +18,7 @@ const Layout = ({
   const { author, copyright, topContents } = useSiteMetadata();
   const metaImage = socialImage != null ? socialImage : author.photo;
 
-  const Div = tw.div`flex flex-col min-h-screen bg-gray-200`;
+  const Div = tw.div`flex flex-col min-h-screen bg-base-gray-light`;
   const Main = tw.div`container mx-auto`;
   const Body = tw.div`w-11/12 grid grid-cols-12 lg:gap-10 gap-6 sm:pt-10 py-10 mx-auto`;
   const Article = tw.div`lg:col-span-8 col-span-12`;
@@ -39,7 +39,7 @@ const Layout = ({
       </Main>
 
       <Footer>
-        <div>{copyright}</div>
+        <div tw="text-base text-base-font ml-2 mb-2">{copyright}</div>
       </Footer>
       <Helmet>
         <html lang="jp" />

@@ -6,22 +6,17 @@ import tw from "twin.macro";
 
 const sortTotalCount = (tags) => orderBy(tags, ['totalCount', 'fieldValue'], ['desc']);
 
-const Tags = ({ tags, urlPrefix, selectedTag }) => {
+const Tags = ({ tags, urlPrefix }) => {
   if (!tags) {
     return null;
   }
-  const Tag = tw.span`inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2`;
+  const Tag = tw.span`inline-block bg-base-gray-light rounded-full px-3 py-1 text-sm font-semibold text-base-font mr-2 mb-2 hover:text-accent`;
 
   return (
       <>
         {sortTotalCount(tags).map(tag => (
             <Link to={`${urlPrefix}/${kebabCase(tag.fieldValue)}`}>
-              {tag.fieldValue === selectedTag && (
-                  <Tag tw="bg-blue-200">#{tag.fieldValue}</Tag>
-              )}
-              {tag.fieldValue !== selectedTag && (
-                  <Tag>#{tag.fieldValue}</Tag>
-              )}
+              <Tag>#{tag.fieldValue}</Tag>
             </Link>
         ))}
       </>

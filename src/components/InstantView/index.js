@@ -6,9 +6,6 @@ import ImageWrap from "../Image/ImageWrap";
 import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 
 const InstantView = ({ items, flex }) => {
-
-  const ContentText = tw.div`font-bold text-base mb-2 text-center text-gray-800 hover:underline`;
-
   const Width = flex ? tw.div`w-1/2` : tw.div`w-full`;
   const Div = flex ? tw.div`flex flex-wrap content-center` : tw.div``;
 

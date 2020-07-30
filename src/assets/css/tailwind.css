@@ -1,40 +1,42 @@
 /*! purgecss start ignore */
 @tailwind base;
 
+/* content */
 .content h1 {
     @apply text-xl;
-    @apply font-bold leading-loose;
-    @apply bg-gray-300;
+    @apply text-base-font font-bold leading-loose;
+    @apply bg-base-gray-light;
     @apply py-4 px-6 mt-10 mb-6;
-    @apply border-l-8 border-solid border-red-800;
+    @apply border-l-8 border-solid border-primary;
 }
 .content h2 {
     @apply text-lg;
-    @apply font-bold;
+    @apply text-base-font font-bold;
     @apply px-3 my-6;
-    @apply border-l-8 border-solid border-red-800;
+    @apply border-l-8 border-solid border-primary;
 }
 .content h3 {
     @apply text-lg;
-    @apply font-bold;
+    @apply text-base-font font-bold;
     @apply my-4;
 }
 .content h4 {
-    @apply text-lg;
+    @apply text-base-font text-lg;
     @apply my-3;
 }
 .content blockquote {
     @apply relative;
     @apply p-3 my-6;
-    @apply bg-gray-300;
-    @apply border-l-4 border-solid border-gray-400;
+    @apply text-base-font bg-base-gray-light;
+    @apply border-l-4 border-solid border-base-gray;
 }
 .content p {
+    @apply text-base-font;
     @apply leading-relaxed;
 }
 .content a {
     @apply break-all;
-    @apply text-blue-700 underline;
+    @apply text-accent underline;
 }
 .content a > svg {
     @apply hidden;
@@ -46,28 +48,33 @@
     @apply rounded-sm;
 }
 .content table {
+    @apply text-base-font;
     @apply border-2;
     @apply block overflow-scroll;
     @apply my-6;
     @apply table-auto;
 }
 .content th {
+    @apply text-base-font;
     @apply border w-1/2 px-4 py-2;
 }
 .content td {
+    @apply text-base-font;
     @apply border px-4 py-2
 }
 .content ul {
+    @apply text-base-font;
     @apply p-3 mt-2 ml-2;
     @apply list-disc;
 }
 
 .toc ul {
+    @apply text-base-font;
     @apply list-inside list-none;
     @apply m-0;
 }
 .toc a {
-    @apply text-blue-600 underline;
+    @apply text-accent underline;
 }
 .toc p {
     @apply m-0;
@@ -90,7 +97,7 @@
     width: 100%;
     position: relative;
     background-color: #fff;
-    @apply border-0 border-b-4 border-blue-700 !important;
+    @apply border-0 border-b-4 border-primary !important;
     border-radius: 0 !important;
 }
 .ais-SearchBox-submit {
@@ -131,7 +138,7 @@
     list-style: none;
 }
 .ais-Highlight-highlighted {
-    @apply bg-blue-200 !important;
+    @apply bg-accent !important;
 }
 
 .ais-Panel-header {
