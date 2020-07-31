@@ -17,7 +17,9 @@ const Header = ({}) => {
   const Content = tw.div`hidden md:w-1/2 md:flex-grow md:flex md:items-center`;
   const ContentInner = tw.div`text-base flex-grow flex-grow`;
   const NAV_GATSBY_LINK = ({ to, children }) =>
-    <Link tw="block inline-block mr-4 text-xl text-base-font font-bold hover:text-primary border-b-4 border-white hover:border-b-4 hover:border-primary uppercase" to={to}>
+    <Link
+        tw="block inline-block mt-1 mr-4 text-xl text-base-font font-bold hover:text-primary border-b-4 border-white hover:border-b-4 hover:border-primary uppercase"
+        to={to}>
       {children}
     </Link>;
 
@@ -40,7 +42,7 @@ const Header = ({}) => {
         <Content>
           <ContentInner>
             {sortTotalCount(categories).map(category => (
-                <NAV_GATSBY_LINK to={`category/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</NAV_GATSBY_LINK>
+                <NAV_GATSBY_LINK key={category.fieldValue} to={`category/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</NAV_GATSBY_LINK>
             ))}
           </ContentInner>
         </Content>

@@ -43,7 +43,7 @@ siteConfig:
     googleAnalyticsPageSize: 5
 
 siteDesign:
-  primary: "#FF2B3C"
+  primary: ""
   accent: ""
   base-gray: ""
 
