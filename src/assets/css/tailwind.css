@@ -96,9 +96,13 @@
     padding: .3rem 1.7rem;
     width: 100%;
     position: relative;
-    background-color: #fff;
+    @apply bg-white;
+    @apply text-base-font;
     @apply border-0 border-b-4 border-primary !important;
     border-radius: 0 !important;
+}
+.ais-SearchBox-input::placeholder {
+    @apply text-base-font;
 }
 .ais-SearchBox-submit {
     left: .3rem;
@@ -107,7 +111,7 @@
     right: .3rem;
 }
 .ais-SearchBox-resetIcon path, .ais-SearchBox-submitIcon path {
-    fill: #495588;
+    @apply fill-base-font;
 }
 .ais-SearchBox-loadingIndicator, .ais-SearchBox-reset, .ais-SearchBox-submit {
     -webkit-appearance: none;

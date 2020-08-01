@@ -44,7 +44,7 @@ const Layout = ({
       <Helmet>
         <html lang="ja" />
         <title>{title}</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css"
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css"
               integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossOrigin="anonymous"/>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
         <script src="https://cdn.iframe.ly/embed.js" async/>
