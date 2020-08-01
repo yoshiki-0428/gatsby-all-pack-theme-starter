@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
 /*! purgecss start ignore */
 @tailwind base;
+
+html {
+    @apply text-base;
+}
+
+body {
+    font-family: 'Raleway', sans-serif, "游ゴシック体", YuGothic;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 /* content */
 .content h1 {

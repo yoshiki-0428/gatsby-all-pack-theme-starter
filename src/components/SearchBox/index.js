@@ -58,16 +58,19 @@ function SearchResult(props) {
       <div tw="flex justify-center pt-24">
         <div tw="w-1/4"/>
         <div tw="bg-base-back p-6 mt-2 rounded-sm shadow-xl border-solid border border-base-gray rounded overflow-scroll"
-             style={{height: `${document.body.offsetHeight * 0.25}px`}}>
+             style={{maxHeight: `${document.body.offsetHeight * 0.25}px`}}>
           {error ? <div>{error.message}</div> : null}
           {searchResults && searchResults.nbHits > 0 ? (
               <div>
-                <div tw="mb-2 text-center text-xl text-base-font">{searchState.query} 検索結果</div>
+                <div tw="mb-2 text-center text-xl text-base-font">
+                  <span tw="font-bold">{searchState.query}</span>
+                  の検索結果
+                </div>
                 <Hits hitComponent={Hit}/>
                 <PoweredBy/>
               </div>
           ) : (
-              <div>No results</div>
+              <div tw="text-base text-base-font">No results</div>
           )}
         </div>
         <div tw="w-1/4"/>

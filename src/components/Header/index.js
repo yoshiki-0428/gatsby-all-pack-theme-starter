@@ -47,8 +47,8 @@ const Header = ({}) => {
             ))}
           </ContentInner>
         </Content>
-        <div tw="sm:w-1/3 lg:w-auto">
-          <SearchComponent/>
+        <div tw="w-12 lg:w-auto">
+          <SearchComponent />
         </div>
       </Nav>
     </StickyDiv>
