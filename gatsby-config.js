@@ -8,6 +8,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 module.exports = {
   pathPrefix: config.siteConfig.pathPrefix,
   siteMetadata: {
+    siteUrl: config.siteConfig.url,
     siteConfig: {
       ...config.siteConfig,
     },
@@ -54,9 +55,11 @@ module.exports = {
           {
             site {
               siteMetadata {
-                site_url: url
-                title
-                description: subtitle
+                siteConfig {
+                  url
+                  title
+                  description: subtitle
+                }
               }
             }
           }
@@ -67,8 +70,8 @@ module.exports = {
               ...edge.node.frontmatter,
               description: edge.node.frontmatter.description,
               date: edge.node.frontmatter.date,
-              url: site.siteMetadata.site_url + edge.node.fields.slug,
-              guid: site.siteMetadata.site_url + edge.node.fields.slug,
+              url: site.siteMetadata.siteConfig.url + edge.node.fields.slug,
+              guid: site.siteMetadata.url + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }]
             }))
           ),
@@ -104,8 +107,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://tech-blog.yoshikiohashi.dev",
-        sitemap: "https://tech-blog.yoshikiohashi.dev/sitemap.xml",
+        host: config.siteConfig.url,
+        sitemap: config.siteConfig.url + "/sitemap.xml",
         env: {
           development: {
             policy: [{ userAgent: "*", disallow: ["/"] }],
@@ -224,7 +227,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                siteUrl: url
+                siteUrl
               }
             }
             allSitePage(
