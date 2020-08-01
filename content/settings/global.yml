@@ -5,7 +5,7 @@ siteConfig:
   subtitle: 'フリーランスWebエンジニアYoshikiOhashiのTech Blog'
   copyright: '© 2020 Yoshiki Ohashi All rights reserved.'
   disqusShortname: 'tech-blog-yoshikiohashi'
-  headerImage: '/media/header.png'
+  headerImage: '/media/dark_header.png'
   postsPerPage: 3
   menu:
     -
