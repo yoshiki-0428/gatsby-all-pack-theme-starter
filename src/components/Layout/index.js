@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useSiteMetadata } from '../../hooks';
+import {useAllMarkdownRemarkForPopularList, useSiteMetadata} from '../../hooks';
 import Header from "../Header";
 import tw from "twin.macro"
 import {Link} from "gatsby";
@@ -16,6 +16,7 @@ const Layout = ({
     top = false
   }) => {
   const { author, copyright, topContents } = useSiteMetadata();
+  const items = useAllMarkdownRemarkForPopularList(topContents.map(top => top.url));
   const metaImage = socialImage != null ? socialImage : author.photo;
 
   const Div = tw.div`flex flex-col min-h-screen bg-base-back`;
@@ -31,8 +32,7 @@ const Layout = ({
 
       <Main>
         <Body>
-          {/*TODO Pathからページデータを取得するロジックを作る*/}
-          {top && topContents.length === 3 && (<TopContents />)}
+          {top && items.length === 3 && (<TopContents items={items} />)}
           <Article>{main}</Article>
           <Side>{side}</Side>
         </Body>

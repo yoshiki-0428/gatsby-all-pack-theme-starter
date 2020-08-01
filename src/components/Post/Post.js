@@ -15,15 +15,8 @@ const Post = ({ post }) => {
   const { slug } = post.fields;
   const { title, date, updatedDate, socialImage, category, relatedLinks } = post.frontmatter;
   const { url } = useSiteMetadata();
-  const articles = useAllMarkdownRemarkForPopularList();
+  const relatedArticles = relatedLinks ? useAllMarkdownRemarkForPopularList(relatedLinks) : null;
 
-  const relatedArticles = articles.filter(a => relatedLinks && relatedLinks.includes(a.fields.slug)).map(a => {
-    return {
-      slug: a.fields.slug,
-      title: a.frontmatter.title,
-      socialImage: a.frontmatter.socialImage,
-    }
-  });
   const tags = post.frontmatter.tags.map(tag => {
     return { fieldValue: tag }
   });
@@ -71,7 +64,7 @@ const Post = ({ post }) => {
         </SPACER>
       </CARD>
 
-      {relatedArticles.length > 0 && (
+      {relatedArticles && (
           <CARD>
             <SPACER>
               <TITLE_H3>Related Links</TITLE_H3>

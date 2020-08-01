@@ -13,7 +13,7 @@ const InstantView = ({ items, flex }) => {
       <Div>
         {items.map((item) => (
             <Width>
-              <div tw="m-4 rounded overflow-hidden border bg-white">
+              <div tw="m-4 rounded overflow-hidden border border-base-gray-light bg-white">
                 <Link to={item.slug}>
                   <ImageWrap
                       item={{ socialImage: item.socialImage, alt: item.alt }}/>

@@ -23,7 +23,7 @@ export const TEXT_GATSBY_LINK = ({ to, children }) =>
 
 export const BUTTON_CENTER = ({ to, children }) =>
     <div tw="p-4 text-center">
-      <Link tw="bg-transparent hover:underline text-base-font font-semibold py-2 px-4 border rounded" to={to}>{children}</Link>
+      <Link tw="bg-transparent hover:underline text-base-font font-semibold py-2 px-4 border border-base-gray-light rounded" to={to}>{children}</Link>
     </div>;
 
 export const CARD = ({ mb = false, top = false, children}) => {

@@ -13,7 +13,7 @@ const Index = ({
 
   return (
     <div tw="mt-2 flex">
-      <div tw="w-1/2 text-left">
+      <div tw="w-1/2 text-left text-base-font">
         {hasPrevPage && (
             <Link rel="prev" to={hasPrevPage ? prevPagePath : '/'}>
               <Button>
@@ -22,7 +22,7 @@ const Index = ({
             </Link>
         )}
       </div>
-      <div tw="w-1/2 text-right">
+      <div tw="w-1/2 text-right text-base-font">
         {hasNextPage && (
             <Link rel="prev" to={hasNextPage ? nextPagePath : '/'}>
               <Button>

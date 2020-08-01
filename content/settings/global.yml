@@ -12,7 +12,9 @@ siteConfig:
       label: "About me"
       path: "/pages/about"
   topContents:
-    - url: ""
+    - url: "/posts/redis-pingpong"
+    - url: "/posts/gatsby-seo-todo"
+    - url: "/posts/try-eventsource"
   socialMediaCard:
     image: 'https://ucarecdn.com/37bf29a4-dcb3-456b-afc0-f34d138c3f77/'
   author:
