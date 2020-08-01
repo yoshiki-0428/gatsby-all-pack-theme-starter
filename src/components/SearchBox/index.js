@@ -31,7 +31,7 @@ const SearchComponent = () => {
         searchClient={searchClient}
     >
       <Configure
-        hitsPerPage={3}
+        hitsPerPage={10}
         removeStopWords
         analytics
         analyticsTags={['site-search']}
@@ -56,12 +56,13 @@ function SearchResult(props) {
 
   return (
       <div tw="flex justify-center pt-24">
-        <div tw="w-1/2"/>
-        <div tw="bg-white p-2 rounded-sm shadow-xl border-solid border border-base-gray">
+        <div tw="w-1/4"/>
+        <div tw="bg-base-back p-6 mt-2 rounded-sm shadow-xl border-solid border border-base-gray rounded overflow-scroll"
+             style={{height: `${document.body.offsetHeight * 0.25}px`}}>
           {error ? <div>{error.message}</div> : null}
           {searchResults && searchResults.nbHits > 0 ? (
               <div>
-                <div tw="font-bold text-xl mb-2 text-center text-gray-800">{searchState.query} 検索結果</div>
+                <div tw="mb-2 text-center text-xl text-base-font">{searchState.query} 検索結果</div>
                 <Hits hitComponent={Hit}/>
                 <PoweredBy/>
               </div>
@@ -69,7 +70,7 @@ function SearchResult(props) {
               <div>No results</div>
           )}
         </div>
-        <div tw="w-1/2"/>
+        <div tw="w-1/4"/>
       </div>
   )
 }
@@ -78,19 +79,19 @@ export const SearchWrapper = connectStateResults(SearchResult);
 
 function Hit(props) {
   return (
-      <div>
-        <Link to={props.hit.id}>
-          <div tw="text-base mb-2 text-center">
+      <Link to={props.hit.id}>
+        <div tw="px-4 py-1">
+          <div tw="text-base mb-2 text-center text-base-font">
             {props.hit.date.split("T")[0]}
           </div>
-          <div tw="font-bold text-xl mb-2 text-base text-gray-800">
+          <div tw="text-center text-xl mb-2 text-base font-bold text-base-font">
             <Highlight attribute="title" hit={props.hit} />
           </div>
-          <div tw="text-gray-700 text-center text-base">
+          <div tw="text-center text-base text-base-font">
             <Highlight attribute="excerpt" hit={props.hit} />
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
   );
 }
 

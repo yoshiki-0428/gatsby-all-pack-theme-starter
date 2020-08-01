@@ -13,7 +13,7 @@ const Header = ({}) => {
   const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-20 bg-white shadow-lg`;
   const Nav = tw.nav`flex items-center justify-between flex-wrap container mx-auto px-8`;
   const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-4`;
-  const Svg = tw.svg`fill-current w-4 h-4 text-base-font`;
+  const Svg = tw.svg`fill-current w-4 h-4 text-base-font hover:text-primary`;
   const Content = tw.div`hidden md:w-1/2 md:flex-grow md:flex md:items-center`;
   const ContentInner = tw.div`text-base flex-grow flex-grow`;
   const NAV_GATSBY_LINK = ({ to, children }) =>

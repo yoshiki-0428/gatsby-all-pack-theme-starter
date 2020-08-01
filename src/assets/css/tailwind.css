@@ -128,7 +128,7 @@
 }
 .ais-SearchBox-loadingIcon, .ais-SearchBox-resetIcon, .ais-SearchBox-submitIcon {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -138,11 +138,12 @@
     height: 14px;
 }
 .ais-Hits-item {
-    width: 100% !important;
-    list-style: none;
+    @apply w-full mb-4 rounded;
+    @apply list-none;
+    @apply shadow-lg bg-white;
 }
 .ais-Highlight-highlighted {
-    @apply bg-accent !important;
+    @apply bg-accent;
 }
 
 .ais-Panel-header {
