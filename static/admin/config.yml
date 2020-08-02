@@ -64,22 +64,40 @@ collections:
         label: 'Global Settings'
         name: 'global-settings'
         fields:
-          - { label: Site Title, name: siteTitle, widget: string }
-          - { label: Site Url, name: siteUrl, widget: string, required: false }
-          - {
-            label: Site Description,
-            name: siteDescription,
-            widget: text,
-            required: false,
-          }
-          - label: Social Media Card
-            name: socialMediaCard
+          - label: Site Config
+            name: siteConfig
             widget: object
             fields:
-              - { label: Image, name: image, widget: image, required: false }
-          - {
-            label: Google Analytics Tracking Id,
-            name: googleTrackingId,
-            widget: string,
-            required: false,
-          }
+              - { label: pathPrefix, name: pathPrefix, widget: string, required: true }
+              - { label: url, name: url, widget: string, required: true }
+              - { label: title, name: title, widget: string, required: true }
+              - { label: subtitle, name: subtitle, widget: string, required: true }
+              - { label: copyright, name: copyright, widget: string, required: true }
+              - { label: disqusShortname, name: disqusShortname, widget: string, required: false }
+              - { label: headerImage, name: headerImage, widget: image, required: false }
+              - { label: postsPerPage, name: postsPerPage, widget: number, required: true }
+
+          - label: Site Designe
+            name: siteDesign
+            widget: object
+            fields:
+              - { label: white, name: white, widget: string, required: true }
+              - { label: primary, name: primary, widget: string, required: true }
+              - { label: accent, name: accent, widget: string, required: true }
+              - { label: baseBack, name: baseBack, widget: string, required: true }
+              - { label: baseFont, name: baseFont, widget: string, required: true }
+              - { label: baseGray, name: baseGray, widget: string, required: true }
+              - { label: baseGrayLight, name: baseGrayLight, widget: string, required: true }
+              - { label: rounded, name: rounded, widget: string, required: true }
+
+          - label: Site Secret
+            name: secretConfig
+            widget: object
+            fields:
+              - { label: algoliaAppId, name: algoliaAppId, widget: string, required: true }
+              - { label: algoliaSearchApiKey, name: algoliaSearchApiKey, widget: string, required: true }
+              - { label: algoliaIndexName, name: algoliaIndexName, widget: string, required: true }
+              - { label: googleAdsnseClientId, name: googleAdsnseClientId, widget: string, required: true }
+              - { label: googleAdsnseClientSlot, name: googleAdsnseClientSlot, widget: string, required: true }
+              - { label: googleAnalyticsId, name: googleAnalyticsId, widget: string, required: true }
+              - { label: googleAnalyticsViewId, name: googleAnalyticsViewId, widget: string, required: true }
