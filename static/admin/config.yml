@@ -77,64 +77,69 @@ collections:
               - { label: disqus Shortname, name: disqusShortname, widget: string, required: false }
               - { label: header Image, name: headerImage, widget: image, required: false }
               - { label: posts Per Page, name: postsPerPage, widget: number, required: true }
-              - label: menu
-                  name: postsPerPage
-                  widget: list
-                  required: false
+              - { label: menu,
+                  name: postsPerPage,
+                  widget: list,
+                  required: false,
                   fields:
                     - { label: label, name: label, widget: string, default: "About me" }
                     - { label: path, name: path, widget: string, default: "/pages/about" }
+              }
+              - { label: Top Contents,
+                  name: topContents,
+                  widget: list,
+                  required: false,
+                  fields:
+                    - { label: url, name: url, widget: string, default: "/posts/hoge-hoge" }
+              }
 
-              - label: Top Contents
-                name: topContents
-                widget: list
-                required: false
-                fields:
-                  - { label: url, name: url, widget: string, default: "/posts/hoge-hoge" }
+              - { label: Social Media Card,
+                  name: socialMediaCard,
+                  widget: object,
+                  fields:
+                    - { label: Image, name: image, widget: image, required: false }
+              }
 
-              - label: Social Media Card
-                name: socialMediaCard
-                widget: object
-                fields:
-                  - { label: Image, name: image, widget: image, required: false }
+              - { label: Author,
+                  name: author,
+                  widget: object,
+                  fields:
+                    - { label: name, name: name, widget: string, required: true }
+                    - { label: photo, name: photo, widget: string, required: true }
+                    - { label: bio, name: bio, widget: string, required: true }
+                    - { label: SNS Contacts,
+                        name: contracts,
+                        widget: object,
+                        fields:
+                          - { label: email, name: email, widget: string, required: false }
+                          - { label: facebook, name: facebook, widget: string, required: false }
+                          - { label: twitter, name: twitter, widget: string, required: false }
+                          - { label: youtube, name: youtube, widget: string, required: false }
+                          - { label: github, name: github, widget: string, required: false }
+                          - { label: gitlab, name: gitlab, widget: string, required: false }
+                          - { label: codepen, name: codepen, widget: string, required: false }
+                          - { label: rss, name: rss, widget: string, required: false, default: "/rss.xml" }
+                          - { label: vkontakte, name: vkontakte, widget: string, required: false }
+                          - { label: linkedin, name: linkedin, widget: string, required: false }
+                          - { label: instagram, name: instagram, widget: string, required: false }
+                          - { label: line, name: line, widget: string, required: false }
+                          - { label: weibo, name: weibo, widget: string, required: false }
+                          - { label: soundcloud, name: soundcloud, widget: string, required: false }
+                          - { label: telegram, name: telegram, widget: string, required: false }
+                    }
+              }
 
-              - label: Author
-                name: author
-                widget: object
-                fields:
-                  - { label: name, name: name, widget: string, required: true }
-                  - { label: photo, name: photo, widget: string, required: true }
-                  - { label: bio, name: bio, widget: string, required: true }
-                  - label: SNS Contacts
-                    name: contracts
-                    widget: object
-                    fields:
-                      - { label: email, name: email, widget: string, required: false }
-                      - { label: facebook, name: facebook, widget: string, required: false }
-                      - { label: twitter, name: twitter, widget: string, required: false }
-                      - { label: youtube, name: youtube, widget: string, required: false }
-                      - { label: github, name: github, widget: string, required: false }
-                      - { label: gitlab, name: gitlab, widget: string, required: false }
-                      - { label: codepen, name: codepen, widget: string, required: false }
-                      - { label: rss, name: rss, widget: string, required: false, default: "/rss.xml" }
-                      - { label: vkontakte, name: vkontakte, widget: string, required: false }
-                      - { label: linkedin, name: linkedin, widget: string, required: false }
-                      - { label: instagram, name: instagram, widget: string, required: false }
-                      - { label: line, name: line, widget: string, required: false }
-                      - { label: weibo, name: weibo, widget: string, required: false }
-                      - { label: soundcloud, name: soundcloud, widget: string, required: false }
-                      - { label: telegram, name: telegram, widget: string, required: false }
-
-              - label: Popular View Setting
-                name: popularView
-                widget: object
-                description: "よく読まれているコンテンツのランキングをGoogleAnalyticsから取得するAPI Settingです"
-                fields:
-                  - { label: google Analytics Start Date, name: googleAnalyticsStartDate, widget: string, required: true, default: "60daysAgo" }
-                  - { label: google Analytics End Date, name: googleAnalyticsEndDate, widget: string, required: true, default: "today" }
-                  - { label: google Analytics Metrics, name: googleAnalyticsMetrics, widget: string, required: true, default: "ga:sessions" }
-                  - { label: google Analytics Filters Url, name: googleAnalyticsFiltersUrl, widget: string, required: true, default: "/posts/" }
-                  - { label: google Analytics Page Size, name: googleAnalyticsPageSize, widget: number, required: true, default: 5 }
+              - { label: Popular View Setting,
+                  name: popularView,
+                  widget: object,
+                  description: "よく読まれているコンテンツのランキングをGoogleAnalyticsから取得するAPI Settingです",
+                  fields:
+                    - { label: google Analytics Start Date, name: googleAnalyticsStartDate, widget: string, required: true, default: "60daysAgo" }
+                    - { label: google Analytics End Date, name: googleAnalyticsEndDate, widget: string, required: true, default: "today" }
+                    - { label: google Analytics Metrics, name: googleAnalyticsMetrics, widget: string, required: true, default: "ga:sessions" }
+                    - { label: google Analytics Filters Url, name: googleAnalyticsFiltersUrl, widget: string, required: true, default: "/posts/" }
+                    - { label: google Analytics Page Size, name: googleAnalyticsPageSize, widget: number, required: true, default: 5 }
+              }
 
           - label: Site Designe
             name: siteDesign
