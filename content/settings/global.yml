@@ -53,6 +53,22 @@ siteDesign:
   baseGray: '#3F3F3F'
   baseGrayLight: '#4E4E4E'
   rounded: '8px'
+  memo: "Theme Dark mode
+  white: '#1F1F1F'
+  primary: '#00FFC5'
+  accent: '#007ACE'
+  baseBack: '#121212'
+  baseFont: '#FAFAFA'
+  baseGray: '#3F3F3F'
+  baseGrayLight: '#4E4E4E
+Theme Light mode
+  white: '#FFFFFF'
+  primary: '#00FFC5'
+  accent: '#007ACE'
+  baseBack: '#ebebeb'
+  baseFont: '#141414'
+  baseGray: '#282828'
+  baseGrayLight: '#E2E8F0"
 
 secretConfig:
   algoliaAppId: 'XIKSJSCPJ3'

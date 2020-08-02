@@ -22,7 +22,7 @@ export class Header extends Component {
 
     const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-20 bg-white shadow-lg`;
     const Nav = tw.nav`flex items-center justify-between flex-wrap container mx-auto px-8`;
-    const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-4`;
+    const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-4 cursor-pointer`;
     const Svg = tw.svg`fill-current w-4 h-4 text-base-font hover:text-primary`;
     const Content = tw.div`hidden md:w-1/2 md:flex-grow md:flex md:items-center`;
     const ContentInner = tw.div`text-base flex-grow flex-grow`;
@@ -37,19 +37,19 @@ export class Header extends Component {
           </SvgWrap>
         </Link>
     );
-    const HamburgerMenu = (active) => (<div>
-        {!active &&
+    const HamburgerMenu = () => (<div>
+        {!this.state.active &&
           <SvgWrap tw="md:hidden block" onClick={this.handleMenuToggle}>
             <Svg viewBox="0 0 24 24">
               <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
             </Svg>
           </SvgWrap>
         }
-        {active &&
+        {this.state.active &&
           <div tw="md:hidden text-center pt-10 w-screen fixed inset-0 z-10 bg-white bg-opacity-75">
             <ul tw="flex items-center flex-col">
               <li tw="mr-6" onClick={this.handleLinkClick}>
-                <Svg tw="w-6 h-6 mr-64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <Svg tw="w-6 h-6 mr-64 cursor-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="24" y1="6" x2="6" y2="24"></line>
                   <line x1="6" y1="6" x2="24" y2="24"></line>
                 </Svg>
@@ -81,7 +81,7 @@ export class Header extends Component {
 
           <Nav>
             <HomeButton/>
-            <HamburgerMenu active={this.state.active} />
+            <HamburgerMenu />
 
             <Content>
               <ContentInner>
