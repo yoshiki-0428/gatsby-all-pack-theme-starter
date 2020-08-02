@@ -38,6 +38,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Related Links", name: "relatedLinks", widget: "list"}
       - {label: "Social Image", name: "socialImage", widget: image, required: false }
       - {label: "Body", name: "body", widget: "markdown"}
 
@@ -68,14 +69,14 @@ collections:
             name: siteConfig
             widget: object
             fields:
-              - { label: pathPrefix, name: pathPrefix, widget: string, required: true }
+              - { label: Path Prefix, name: pathPrefix, widget: string, required: true }
               - { label: url, name: url, widget: string, required: true }
               - { label: title, name: title, widget: string, required: true }
               - { label: subtitle, name: subtitle, widget: string, required: true }
               - { label: copyright, name: copyright, widget: string, required: true }
-              - { label: disqusShortname, name: disqusShortname, widget: string, required: false }
-              - { label: headerImage, name: headerImage, widget: image, required: false }
-              - { label: postsPerPage, name: postsPerPage, widget: number, required: true }
+              - { label: disqus Shortname, name: disqusShortname, widget: string, required: false }
+              - { label: header Image, name: headerImage, widget: image, required: false }
+              - { label: posts Per Page, name: postsPerPage, widget: number, required: true }
               - label: menu
                   name: postsPerPage
                   widget: list
@@ -129,11 +130,11 @@ collections:
                 widget: object
                 description: "よく読まれているコンテンツのランキングをGoogleAnalyticsから取得するAPI Settingです"
                 fields:
-                  - { label: googleAnalyticsStartDate, name: googleAnalyticsStartDate, widget: string, required: true, default: "60daysAgo" }
-                  - { label: googleAnalyticsEndDate, name: googleAnalyticsEndDate, widget: string, required: true, default: "today" }
-                  - { label: googleAnalyticsMetrics, name: googleAnalyticsMetrics, widget: string, required: true, default: "ga:sessions" }
-                  - { label: googleAnalyticsFiltersUrl, name: googleAnalyticsFiltersUrl, widget: string, required: true, default: "/posts/" }
-                  - { label: googleAnalyticsPageSize, name: googleAnalyticsPageSize, widget: number, required: true, default: 5 }
+                  - { label: google Analytics Start Date, name: googleAnalyticsStartDate, widget: string, required: true, default: "60daysAgo" }
+                  - { label: google Analytics End Date, name: googleAnalyticsEndDate, widget: string, required: true, default: "today" }
+                  - { label: google Analytics Metrics, name: googleAnalyticsMetrics, widget: string, required: true, default: "ga:sessions" }
+                  - { label: google Analytics Filters Url, name: googleAnalyticsFiltersUrl, widget: string, required: true, default: "/posts/" }
+                  - { label: google Analytics Page Size, name: googleAnalyticsPageSize, widget: number, required: true, default: 5 }
 
           - label: Site Designe
             name: siteDesign
@@ -142,20 +143,20 @@ collections:
               - { label: white, name: white, widget: string, required: true }
               - { label: primary, name: primary, widget: string, required: true }
               - { label: accent, name: accent, widget: string, required: true }
-              - { label: baseBack, name: baseBack, widget: string, required: true }
-              - { label: baseFont, name: baseFont, widget: string, required: true }
-              - { label: baseGray, name: baseGray, widget: string, required: true }
-              - { label: baseGrayLight, name: baseGrayLight, widget: string, required: true }
+              - { label: base Back, name: baseBack, widget: string, required: true }
+              - { label: base Font, name: baseFont, widget: string, required: true }
+              - { label: base Gray, name: baseGray, widget: string, required: true }
+              - { label: base Gray Light, name: baseGrayLight, widget: string, required: true }
               - { label: rounded, name: rounded, widget: string, required: true }
 
           - label: Site Secret
             name: secretConfig
             widget: object
             fields:
-              - { label: algoliaAppId, name: algoliaAppId, widget: string, required: true }
-              - { label: algoliaSearchApiKey, name: algoliaSearchApiKey, widget: string, required: true }
-              - { label: algoliaIndexName, name: algoliaIndexName, widget: string, required: true }
-              - { label: googleAdsnseClientId, name: googleAdsnseClientId, widget: string, required: true }
-              - { label: googleAdsnseClientSlot, name: googleAdsnseClientSlot, widget: string, required: true }
-              - { label: googleAnalyticsId, name: googleAnalyticsId, widget: string, required: true }
-              - { label: googleAnalyticsViewId, name: googleAnalyticsViewId, widget: string, required: true }
+              - { label: algolia App Id, name: algoliaAppId, widget: string, required: true }
+              - { label: algolia Search Api Key, name: algoliaSearchApiKey, widget: string, required: true }
+              - { label: algolia Index Name, name: algoliaIndexName, widget: string, required: true }
+              - { label: google Adsnse Client Id, name: googleAdsnseClientId, widget: string, required: true }
+              - { label: google Adsnse Client Slot, name: googleAdsnseClientSlot, widget: string, required: true }
+              - { label: google Analytics Id, name: googleAnalyticsId, widget: string, required: true }
+              - { label: google Analytics ViewId, name: googleAnalyticsViewId, widget: string, required: true }
