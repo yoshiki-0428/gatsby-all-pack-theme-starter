@@ -146,23 +146,6 @@ collections:
             widget: object
             hint: "サイトのカラーを手動で設定可能です。"
             fields:
-              - { label: color memo, name: memo, widget: text, required: false, default: "
-              Theme Dark mode
-                white: '#1F1F1F'
-                primary: '#00FFC5'
-                accent: '#007ACE'
-                baseBack: '#121212'
-                baseFont: '#FAFAFA'
-                baseGray: '#3F3F3F'
-                baseGrayLight: '#4E4E4E
-              Theme Light mode
-                white: '#FFFFFF'
-                primary: '#00FFC5'
-                accent: '#007ACE'
-                baseBack: '#ebebeb'
-                baseFont: '#141414'
-                baseGray: '#282828'
-                baseGrayLight: '#E2E8F0" }
               - { label: white, name: white, widget: string, required: true }
               - { label: primary, name: primary, widget: string, required: true }
               - { label: accent, name: accent, widget: string, required: true }
