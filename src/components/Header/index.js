@@ -37,15 +37,15 @@ export class Header extends Component {
           </SvgWrap>
         </Link>
     );
-    const HamburgerMenu = () => (<div>
-        {!this.state.active &&
+    const HamburgerMenu = (active) => (<div>
+        {!active &&
           <SvgWrap tw="md:hidden block" onClick={this.handleMenuToggle}>
             <Svg viewBox="0 0 24 24">
               <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
             </Svg>
           </SvgWrap>
         }
-        {this.state.active &&
+        {active &&
           <div tw="md:hidden text-center pt-10 w-screen fixed inset-0 z-10 bg-white bg-opacity-75">
             <ul tw="flex items-center flex-col">
               <li tw="mr-6" onClick={this.handleLinkClick}>
@@ -81,7 +81,7 @@ export class Header extends Component {
 
           <Nav>
             <HomeButton/>
-            <HamburgerMenu/>
+            <HamburgerMenu active={this.state.active} />
 
             <Content>
               <ContentInner>
