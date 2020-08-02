@@ -45,9 +45,14 @@ siteConfig:
     googleAnalyticsPageSize: 5
 
 siteDesign:
-  primary: ""
-  accent: ""
-  base-gray: ""
+  white: '#1F1F1F'
+  primary: '#00FFC5'
+  accent: '#007ACE'
+  baseBack: '#121212'
+  baseFont: '#FAFAFA'
+  baseGray: '#3F3F3F'
+  baseGrayLight: '#4E4E4E'
+  rounded: '8px'
 
 secretConfig:
   algoliaAppId: 'XIKSJSCPJ3'

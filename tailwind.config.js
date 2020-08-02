@@ -24,18 +24,25 @@ const config = require("./loadYaml.js");
 module.exports = {
   purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
   theme: {
+    borderRadius: {
+      'sm': '0.125rem',
+      default: config.siteDesign.rounded,
+      'md': '0.375rem',
+      'lg': '0.5rem',
+      'full': '9999px',
+    },
     extend: {
       colors: {
-        white: '#1F1F1F',
-        primary: '#00FFC5',
-        accent: '#007ACE',
-        "base-back": '#121212',
-        "base-font": '#FAFAFA',
-        "base-gray": '#3F3F3F',
-        "base-gray-light": '#4E4E4E'
+        white: config.siteDesign.white,
+        primary: config.siteDesign.primary,
+        accent: config.siteDesign.accent,
+        "base-back": config.siteDesign.baseBack,
+        "base-font": config.siteDesign.baseFont,
+        "base-gray": config.siteDesign.baseGray,
+        "base-gray-light": config.siteDesign.baseGrayLight
       },
       fill: {
-        "base-font": '#FAFAFA',
+        "base-font": config.siteDesign.baseFont,
       }
     },
   },

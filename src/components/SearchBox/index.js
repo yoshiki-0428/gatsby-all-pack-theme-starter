@@ -57,7 +57,7 @@ function SearchResult(props) {
   return (
       <div tw="flex justify-center pt-24">
         <div tw="w-1/4"/>
-        <div tw="bg-base-back p-6 mt-2 rounded-sm shadow-xl border-solid border border-base-gray rounded overflow-scroll"
+        <div tw="bg-base-back p-6 mt-2 rounded shadow-xl border-solid border border-base-gray overflow-scroll"
              style={{maxHeight: `${document.body.offsetHeight * 0.25}px`}}>
           {error ? <div>{error.message}</div> : null}
           {searchResults && searchResults.nbHits > 0 ? (
