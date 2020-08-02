@@ -15,7 +15,7 @@ const Tags = ({ tags, urlPrefix }) => {
   return (
       <>
         {sortTotalCount(tags).map(tag => (
-            <Link to={`${urlPrefix}/${kebabCase(tag.fieldValue)}`}>
+            <Link key={tag.fieldValue} to={`${urlPrefix}/${kebabCase(tag.fieldValue)}`}>
               <Tag>#{tag.fieldValue}</Tag>
             </Link>
         ))}

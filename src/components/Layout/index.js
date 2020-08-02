@@ -69,7 +69,7 @@ const TopContents = ({ items }) => {
   return (
       <>
         {items.slice(0, 3).map(item => (
-            <TopContent>
+            <TopContent key={item.slug}>
               <div tw="rounded overflow-hidden bg-white">
                 <Link to={item.slug}>
                   <ImageWrap item={{ socialImage: item.socialImage, alt: '' }}/>

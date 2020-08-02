@@ -15,7 +15,7 @@ const Feed = ({ edges }) => {
   return (
       <div>
         {edges.map((edge) => (
-            <CARD>
+            <CARD key={edge.node.fields.slug}>
               <SPACER>
                 <TEXT_BASE_CENTER>
                   <time dateTime={moment(edge.node.frontmatter.date).format('YYYY/MM/DD')}>

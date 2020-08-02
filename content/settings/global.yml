@@ -6,7 +6,7 @@ siteConfig:
   copyright: '© 2020 Yoshiki Ohashi All rights reserved.'
   disqusShortname: 'tech-blog-yoshikiohashi'
   headerImage: '/media/dark_header.png'
-  postsPerPage: 3
+  postsPerPage: 10
   menu:
     -
       label: "About me"
@@ -19,7 +19,7 @@ siteConfig:
     image: 'https://ucarecdn.com/37bf29a4-dcb3-456b-afc0-f34d138c3f77/'
   author:
     name: "Yoshiki Ohashi"
-    photo: "https://avatars3.githubusercontent.com/u/20635620?s=400&u=280a071aeba97582646be64a5b75921fff99cfdf&v=4"
+    photo: "/media/icon.jpg"
     bio: "Web engineer, Java, Node, JavaScript, Spring..."
     contacts:
       email: "rrrtcdish2+tech-blog@gmail.com"
@@ -47,7 +47,7 @@ siteConfig:
 siteDesign:
   white: '#1F1F1F'
   primary: '#00FFC5'
-  accent: '#007ACE'
+  accent: '#0095FB'
   baseBack: '#121212'
   baseFont: '#FAFAFA'
   baseGray: '#3F3F3F'

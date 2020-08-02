@@ -12,7 +12,7 @@ const InstantView = ({ items, flex }) => {
   return (
       <Div>
         {items.map((item) => (
-            <Width>
+            <Width key={item.slug}>
               <div tw="m-4 rounded overflow-hidden border border-base-gray-light bg-white">
                 <Link to={item.slug}>
                   <ImageWrap
