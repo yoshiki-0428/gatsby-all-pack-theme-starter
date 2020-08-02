@@ -66,20 +66,22 @@ collections:
         name: 'global-settings'
         fields:
           - label: Site Config
+            hint: 'サイトに関わるURLやタイトルなどの設定ができます。'
             name: siteConfig
             widget: object
             fields:
               - { label: Path Prefix, name: pathPrefix, widget: string, required: true }
               - { label: url, name: url, widget: string, required: true }
               - { label: title, name: title, widget: string, required: true }
-              - { label: subtitle, name: subtitle, widget: string, required: true }
-              - { label: copyright, name: copyright, widget: string, required: true }
-              - { label: disqus Shortname, name: disqusShortname, widget: string, required: false }
-              - { label: header Image, name: headerImage, widget: image, required: false }
-              - { label: posts Per Page, name: postsPerPage, widget: number, required: true }
+              - { label: subtitle, name: subtitle, widget: string, required: false }
+              - { label: copyright, name: copyright, widget: string, required: false }
+              - { label: disqus Shortname, name: disqusShortname, widget: string, required: false, hint: "DisqusのShortnameを入れることで記事の下にDisqusを配置できます。" }
+              - { label: header Image, name: headerImage, widget: image, required: false, hint: "サイトトップのヘッダー画像を設定できます。未設定の場合非表示となります。" }
+              - { label: posts Per Page, name: postsPerPage, widget: number, required: true, default: 10, hint: "1ページあたりの表示記事数を表します。" }
               - label: menu
                 name: menu
                 widget: list
+                hint: "サイトトップに専用のリンクを表示できます。"
                 required: false
                 fields:
                   - { label: 'label', name: 'label', widget: string, default: "About me" }
@@ -87,19 +89,22 @@ collections:
               - label: Top Contents
                 name: topContents
                 widget: list
+                hint: "サイトトップに3つのみ手動設定した記事を表示できます"
                 required: false
                 fields:
-                  - { label: url, name: url, widget: string, default: "/posts/hoge-hoge" }
+                  - { label: url, name: url, widget: string, hint: "/posts/hoge-hoge" }
 
               - label: Social Media Card
                 name: socialMediaCard
                 widget: object
+                hint: "サイトのイメージ画像です。OGPリンクなどで表示されます。"
                 fields:
                   - { label: Image, name: image, widget: image, required: false }
 
               - label: Author
                 name: author
                 widget: object
+                hint: "著者情報を設定できます。"
                 fields:
                   - { label: name, name: name, widget: string, required: true }
                   - { label: photo, name: photo, widget: string, required: true }
@@ -107,6 +112,7 @@ collections:
                   - label: SNS Contacts
                     name: contacts
                     widget: object
+                    hint: "SNSのリンクを設定できます"
                     fields:
                       - { label: email, name: email, widget: string, required: false }
                       - { label: facebook, name: facebook, widget: string, required: false }
@@ -127,18 +133,36 @@ collections:
               - label: Popular View Setting
                 name: popularView
                 widget: object
-                description: "よく読まれているコンテンツのランキングをGoogleAnalyticsから取得するAPI Settingです"
+                hint: "よく読まれているコンテンツのランキングをGoogleAnalyticsから取得するAPI Settingです"
                 fields:
-                  - { label: google Analytics Start Date, name: googleAnalyticsStartDate, widget: string, required: true, default: "60daysAgo" }
-                  - { label: google Analytics End Date, name: googleAnalyticsEndDate, widget: string, required: true, default: "today" }
-                  - { label: google Analytics Metrics, name: googleAnalyticsMetrics, widget: string, required: true, default: "ga:sessions" }
-                  - { label: google Analytics Filters Url, name: googleAnalyticsFiltersUrl, widget: string, required: true, default: "/posts/" }
-                  - { label: google Analytics Page Size, name: googleAnalyticsPageSize, widget: number, required: true, default: 5 }
+                  - { label: google Analytics Start Date, name: googleAnalyticsStartDate, widget: string, required: true, default: "60daysAgo", hint: "集計開始日" }
+                  - { label: google Analytics End Date, name: googleAnalyticsEndDate, widget: string, required: true, default: "today", hint: "集計終了日"  }
+                  - { label: google Analytics Metrics, name: googleAnalyticsMetrics, widget: string, required: true, default: "ga:sessions", hint: "集計対象"  }
+                  - { label: google Analytics Filters Url, name: googleAnalyticsFiltersUrl, widget: string, required: true, default: "/posts/", hint: "集計するURLのプレフィックス"  }
+                  - { label: google Analytics Page Size, name: googleAnalyticsPageSize, widget: number, required: true, default: 5, hint: "集計記事数" }
 
           - label: Site Designe
             name: siteDesign
             widget: object
+            hint: "サイトのカラーを手動で設定可能です。"
             fields:
+              - { label: color memo, name: memo, widget: text, required: false, default: "
+              Theme Dark mode
+                white: '#1F1F1F'
+                primary: '#00FFC5'
+                accent: '#007ACE'
+                baseBack: '#121212'
+                baseFont: '#FAFAFA'
+                baseGray: '#3F3F3F'
+                baseGrayLight: '#4E4E4E
+              Theme Light mode
+                white: '#FFFFFF'
+                primary: '#00FFC5'
+                accent: '#007ACE'
+                baseBack: '#ebebeb'
+                baseFont: '#141414'
+                baseGray: '#282828'
+                baseGrayLight: '#E2E8F0" }
               - { label: white, name: white, widget: string, required: true }
               - { label: primary, name: primary, widget: string, required: true }
               - { label: accent, name: accent, widget: string, required: true }
@@ -146,16 +170,17 @@ collections:
               - { label: base Font, name: baseFont, widget: string, required: true }
               - { label: base Gray, name: baseGray, widget: string, required: true }
               - { label: base Gray Light, name: baseGrayLight, widget: string, required: true }
-              - { label: rounded, name: rounded, widget: string, required: true }
+              - { label: rounded, name: rounded, widget: string, required: true, hint: "単位px, rem" }
 
           - label: Site Secret
             name: secretConfig
             widget: object
+            hint: "Google AnalyticsやAdsense, Algolia検索などで使用されるAPIキーなどを設定する必要があります"
             fields:
               - { label: algolia App Id, name: algoliaAppId, widget: string, required: true }
               - { label: algolia Search Api Key, name: algoliaSearchApiKey, widget: string, required: true }
               - { label: algolia Index Name, name: algoliaIndexName, widget: string, required: true }
-              - { label: google Adsnse Client Id, name: googleAdsnseClientId, widget: string, required: true }
-              - { label: google Adsnse Client Slot, name: googleAdsnseClientSlot, widget: string, required: true }
-              - { label: google Analytics Id, name: googleAnalyticsId, widget: string, required: true }
-              - { label: google Analytics ViewId, name: googleAnalyticsViewId, widget: string, required: true }
+              - { label: google Adsnse Client Id, name: googleAdsnseClientId, widget: string, required: false }
+              - { label: google Adsnse Client Slot, name: googleAdsnseClientSlot, widget: string, required: false }
+              - { label: google Analytics Id, name: googleAnalyticsId, widget: string, required: false }
+              - { label: google Analytics ViewId, name: googleAnalyticsViewId, widget: string, required: false }
