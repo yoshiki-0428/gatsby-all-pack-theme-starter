@@ -65,20 +65,20 @@ const Layout = ({
 };
 
 const TopContents = ({ items }) => {
-  const TopContent = tw.div`lg:col-span-4 col-span-12 bg-white shadow-lg`;
+  const TopContent = tw.div`lg:col-span-4 col-span-12 bg-white shadow-lg rounded`;
 
   return (
       <>
         {items.slice(0, 3).map(item => (
             <TopContent key={item.slug}>
-              <div tw="rounded overflow-hidden bg-white">
+              <div tw="rounded-tr rounded-tl overflow-hidden bg-white">
                 <Link to={item.slug}>
                   <ImageWrap item={{ socialImage: item.socialImage, alt: '' }}/>
                 </Link>
-                <SPACER>
-                  <TEXT_GATSBY_LINK_H3 to={item.slug}>{item.title}</TEXT_GATSBY_LINK_H3>
-                </SPACER>
               </div>
+              <SPACER>
+                <TEXT_GATSBY_LINK_H3 to={item.slug}>{item.title}</TEXT_GATSBY_LINK_H3>
+              </SPACER>
             </TopContent>
         ))}
       </>
