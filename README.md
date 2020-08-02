@@ -6,7 +6,7 @@ https://gatsby-all-pack-theme-starter.netlify.app/
 
 # What is this
 
-**gatsby-all-pack-theme-starter **
+**gatsby-all-pack-theme-starter**
 
 GatsbyJS に最初から入っていれば良いのにと思い作成したのがこちらのBlog Themeになります。
 
@@ -57,7 +57,6 @@ TODO
 ![](https://img.esa.io/uploads/production/attachments/15569/2020/08/03/84487/c0055f0b-8732-4943-8b05-029608a12334.png)
 
 **Theme Dark mode (Sample)**
-
 - white: `#1F1F1F`
 - primary: `#00FFC5`
 - accent: `#007ACE`
@@ -67,7 +66,6 @@ TODO
 - baseGrayLight: `#4E4E4E`
 
 **Theme Light mode (Sample)**
-
 - white: `#FFFFFF`
 - primary: `#00FFC5`
 - accent: `#007ACE`
