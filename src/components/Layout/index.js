@@ -1,11 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import {useAllMarkdownRemarkForPopularList, useSiteMetadata} from '../../hooks';
-import Header from "../Header";
+import {useAllMarkdownRemarkForPopularList, useSiteMetadata, useCategoriesList} from '../../hooks';
 import tw from "twin.macro"
 import {Link} from "gatsby";
 import ImageWrap from "../Image/ImageWrap";
 import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
+import {Header} from "../Header";
 
 const Layout = ({
     main,
@@ -15,7 +15,8 @@ const Layout = ({
     socialImage,
     top = false
   }) => {
-  const { author, copyright, topContents } = useSiteMetadata();
+  const { author, copyright, topContents, headerImage } = useSiteMetadata();
+  const categories = useCategoriesList();
   const items = useAllMarkdownRemarkForPopularList(topContents.map(top => top.url));
   const metaImage = socialImage != null ? socialImage : author.photo;
 
@@ -28,7 +29,7 @@ const Layout = ({
 
   return (
     <Div>
-      <Header/>
+      <Header headerImage={headerImage} categories={categories}/>
 
       <Main>
         <Body>
