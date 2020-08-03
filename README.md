@@ -8,7 +8,7 @@ https://gatsby-all-pack-theme-starter.netlify.app/
 
 **gatsby-all-pack-theme-starter**
 
-GatsbyJS に最初から入っていれば良いのにと思い作成したのがこちらのBlog Themeになります。
+GatsbyJS に最初からこんな機能が入っていれば良いのにと思い作成したのがこちらのBlog Themeです。
 
 最初からワードの記事検索機能やRSSの生成機能、Google Analyticsでのランキング機能、関連記事の表示など
 ブログに最低限必要な機能をすべて詰め込んだThemeになります。
@@ -38,19 +38,24 @@ gatsby new blog https://github.com/yoshiki-0428/gatsby-all-pack-theme-starter.gi
 
 2. NetlifyのサイトでGit連携をする
 
-3. デプロイする
+3. Netlify Envを設定する
+
+![](https://ucarecdn.com/73d29e3e-1542-4320-a67b-51487ddafec3/)
+
+秘匿情報をGit履歴にコミットしないようEnvを設定する必要があります。Themeでは2つのEnvが必要です。
+
+- ALGOLIA_ADMIN_KEY: [取得の仕方](https://www.algolia.com/doc/guides/security/api-keys/#admin-api-key)
+- GA_CRED: : [Google Cloud API Credentials Json 取得の仕方](https://cloud.google.com/docs/authentication/getting-started)
+
+4. デプロイする
 
 ## Site Setting
 
 サイト名、タイトル、ブログ画像、ヘッダー画像、著者情報などブログに必要な内容を設定していく
 
-## Analytics & Algolia Setting
+## Google Analytics & Algolia Setting
 
-TODO
-
-## Netlify Env Setting
-
-TODO
+各種APIのAPI Keyを取得する必要があります。Skip可能です。
 
 ## Color Setting
 
