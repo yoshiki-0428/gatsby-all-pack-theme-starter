@@ -1,5 +1,4 @@
 import React from 'react';
-import Author from '../Author';
 import Tags from '../Tags';
 import { ShareSns } from "../ShareSns/ShareSns";
 import Disqus from 'gatsby-plugin-disqus';
@@ -14,7 +13,7 @@ const Post = ({ post }) => {
   const { id, html } = post;
   const { slug } = post.fields;
   const { title, date, updatedDate, socialImage, category, relatedLinks } = post.frontmatter;
-  const { url } = useSiteMetadata();
+  const { url, disqusShortname } = useSiteMetadata();
   const relatedArticles = relatedLinks ? useAllMarkdownRemarkForPopularList(relatedLinks) : null;
 
   const tags = post.frontmatter.tags.map(tag => {
@@ -54,17 +53,19 @@ const Post = ({ post }) => {
         </SPACER>
       </CARD>
 
-      <CARD>
-        <SPACER>
-          <Disqus
-                identifier={id}
-                title={title}
-                url={url + slug}
-            />
-        </SPACER>
-      </CARD>
+      {disqusShortname &&
+          <CARD>
+            <SPACER>
+              <Disqus
+                  identifier={id}
+                  title={title}
+                  url={url + slug}
+              />
+            </SPACER>
+          </CARD>
+      }
 
-      {relatedArticles && (
+      {relatedArticles &&
           <CARD>
             <SPACER>
               <TITLE_H3>Related Links</TITLE_H3>
@@ -72,7 +73,7 @@ const Post = ({ post }) => {
               <InstantView flex items={relatedArticles} />
             </SPACER>
           </CARD>
-      )}
+      }
     </div>
   );
 };

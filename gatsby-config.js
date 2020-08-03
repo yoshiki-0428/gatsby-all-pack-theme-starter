@@ -166,7 +166,7 @@ module.exports = {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: config.secretConfig.algoliaAppId,
-        apiKey: config.secretKey.algoliaAdminApiKey,
+        apiKey: process.env['ALGOLIA_ADMIN_KEY'],
         indexName: config.secretConfig.algoliaIndexName,
         queries: [
             {
