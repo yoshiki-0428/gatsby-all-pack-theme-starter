@@ -42,10 +42,10 @@ siteConfig:
     googleAnalyticsFiltersUrl: /posts/
     googleAnalyticsPageSize: 5
   menu:
-    - label: About me
-      path: /pages/about
     - label: My Portfolio
       path: https://yoshikiohashi.dev/
+    - label: About me
+      path: /pages/about
 siteDesign:
   white: "#1F1F1F"
   primary: "#00FFC5"
@@ -58,8 +58,8 @@ siteDesign:
 secretConfig:
   algoliaAppId: XIKSJSCPJ3
   algoliaSearchApiKey: a0eb781d9e8354258d74c311a05f0cc1
-  algoliaIndexName: BLOG
-  googleAdsnseClientId: ca-pub-10752010519143941
-  googleAdsnseClientSlot: "1075201051914394"
-  googleAnalyticsId: ""
-  googleAnalyticsViewId: "219075804"
+  algoliaIndexName: gatsby-all-pack-theme-starter
+  googleAdsnseClientId: ca-pub-1075201051914394
+  googleAdsnseClientSlot: ""
+  googleAnalyticsId: UA-157574909-4
+  googleAnalyticsViewId: "225476419"
