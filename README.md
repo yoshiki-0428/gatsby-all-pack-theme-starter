@@ -34,6 +34,9 @@ GatsbyJS に最初からこんな機能が入っていれば良いのにと思�
 
 ```
 gatsby new blog https://github.com/yoshiki-0428/gatsby-all-pack-theme-starter.git
+cd blog
+git remote add origin [your-git-repository-url]
+git push origin master
 ```
 
 2. NetlifyのサイトでGit連携をする
@@ -62,22 +65,22 @@ gatsby new blog https://github.com/yoshiki-0428/gatsby-all-pack-theme-starter.gi
 ![](https://img.esa.io/uploads/production/attachments/15569/2020/08/03/84487/c0055f0b-8732-4943-8b05-029608a12334.png)
 
 **Theme Dark mode (Sample)**
-- white: `#1F1F1F`
-- primary: `#00FFC5`
-- accent: `#007ACE`
-- baseBack: `#121212`
-- baseFont: `#FAFAFA`
-- baseGray: `#3F3F3F`
-- baseGrayLight: `#4E4E4E`
+- white: <div style="color: #1F1F1F">`#1F1F1F`</div>
+- primary: <div style="color: "#00FFC5">`#00FFC5`</div>
+- accent: <div style="color: "#007ACE">`#007ACE`</div>
+- baseBack: <div style="color: "#121212">`#121212`</div>
+- baseFont: <div style="color: "#FAFAFA">`#FAFAFA`</div>
+- baseGray: <div style="color: "#3F3F3F">`#3F3F3F`</div>
+- baseGrayLight: <div style="color: "#4E4E4E">`#4E4E4E`</div>
 
 **Theme Light mode (Sample)**
-- white: `#FFFFFF`
-- primary: `#00FFC5`
-- accent: `#007ACE`
-- baseBack: `#ebebeb`
-- baseFont: `#141414`
-- baseGray: `#282828`
-- baseGrayLight: `#E2E8F0`
+- white: <div style="color: "#FFFFFF">`#FFFFFF`</div>
+- primary: <div style="color: "#00FFC5">`#00FFC5`</div>
+- accent: <div style="color: "#007ACE">`#007ACE`</div>
+- baseBack: <div style="color: "#ebebeb">`#ebebeb`</div>
+- baseFont: <div style="color: "#141414">`#141414`</div>
+- baseGray: <div style="color: "#282828">`#282828`</div>
+- baseGrayLight: <div style="color: "#E2E8F0">`#E2E8F0`</div>
 
 ## How To Post articles
 
@@ -86,6 +89,6 @@ gatsby new blog https://github.com/yoshiki-0428/gatsby-all-pack-theme-starter.gi
 1. your-domain.com/admin にアクセスしログイン
 2. posts のタブに遷移し、記事を編集する
 
-### esa.io でのthird party CMSでの更新
+### esa.io などのthird party CMSでの更新
 
 [こちら](https://github.com/yoshiki-0428/esa-source-lambda/blob/master/README.md)を参照
