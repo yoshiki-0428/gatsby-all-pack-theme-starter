@@ -62,7 +62,7 @@ const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter
     }
 
     const [report] = res.data.reports;
-    const rows = report.data.rows;
+    const rows = report.data.rows || [];
 
     rows.forEach(r => {
       const data = {
