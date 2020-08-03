@@ -107,7 +107,7 @@ collections:
                 hint: "著者情報を設定できます。"
                 fields:
                   - { label: name, name: name, widget: string, required: true }
-                  - { label: photo, name: photo, widget: string, required: true }
+                  - { label: photo, name: photo, widget: image, required: true }
                   - { label: bio, name: bio, widget: string, required: true }
                   - label: SNS Contacts
                     name: contacts
