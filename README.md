@@ -65,22 +65,22 @@ git push origin master
 ![](https://img.esa.io/uploads/production/attachments/15569/2020/08/03/84487/c0055f0b-8732-4943-8b05-029608a12334.png)
 
 **Theme Dark mode (Sample)**
-- white: `#1F1F1F`
-- primary: `#00FFC5`
-- accent: `#007ACE`
-- baseBack: `#121212`
-- baseFont: `#FAFAFA`
-- baseGray: `#3F3F3F`
-- baseGrayLight: `#4E4E4E`
+- white: ![](https://via.placeholder.com/16/1F1F1F/FFFFFF/?text=%20) `#1F1F1F`
+- primary: ![](https://via.placeholder.com/16/00FFC5/FFFFFF/?text=%20) `#00FFC5`
+- accent: ![](https://via.placeholder.com/16/007ACE/FFFFFF/?text=%20) `#007ACE`
+- baseBack: ![](https://via.placeholder.com/16/121212/FFFFFF/?text=%20) `#121212`
+- baseFont: ![](https://via.placeholder.com/16/FAFAFA/FFFFFF/?text=%20) `#FAFAFA`
+- baseGray: ![](https://via.placeholder.com/16/3F3F3F/FFFFFF/?text=%20) `#3F3F3F`
+- baseGrayLight: ![](https://via.placeholder.com/16/4E4E4E/FFFFFF/?text=%20) `#4E4E4E`
 
 **Theme Light mode (Sample)**
-- white: `#FFFFFF`
-- primary: `#00FFC5`
-- accent: `#007ACE`
-- baseBack: `#ebebeb`
-- baseFont: `#141414`
-- baseGray: `#282828`
-- baseGrayLight: `#E2E8F0`
+- white: ![](https://via.placeholder.com/16/FFFFFF/FFFFFF/?text=%20) `#FFFFFF`
+- primary: ![](https://via.placeholder.com/16/00FFC5/FFFFFF/?text=%20) `#00FFC5`
+- accent: ![](https://via.placeholder.com/16/007ACE/FFFFFF/?text=%20) `#007ACE`
+- baseBack: ![](https://via.placeholder.com/16/ebebeb/FFFFFF/?text=%20) `#ebebeb`
+- baseFont: ![](https://via.placeholder.com/16/141414/FFFFFF/?text=%20) `#141414`
+- baseGray: ![](https://via.placeholder.com/16/282828/FFFFFF/?text=%20) `#282828`
+- baseGrayLight: ![](https://via.placeholder.com/16/E2E8F0/FFFFFF/?text=%20) `#E2E8F0`
 
 ## How To Post articles
 
