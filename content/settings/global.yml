@@ -46,6 +46,8 @@ siteConfig:
       path: https://yoshikiohashi.dev/
     - label: About me
       path: /pages/about
+    - label: Blog Source Code
+      path: https://github.com/yoshiki-0428/gatsby-all-pack-theme-starter
 siteDesign:
   white: "#1F1F1F"
   primary: "#00FFC5"
