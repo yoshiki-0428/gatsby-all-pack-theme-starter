@@ -38,8 +38,8 @@ siteConfig:
   popularView:
     googleAnalyticsStartDate: 60daysAgo
     googleAnalyticsEndDate: today
-    googleAnalyticsMetrics: ga:sessions
-    googleAnalyticsFiltersUrl: /posts/
+    googleAnalyticsMetrics: ga:pageviews
+    googleAnalyticsFiltersUrl: /posts
     googleAnalyticsPageSize: 5
   menu:
     - label: My Portfolio

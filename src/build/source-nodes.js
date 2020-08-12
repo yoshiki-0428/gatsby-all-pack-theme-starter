@@ -63,6 +63,7 @@ const sourceNode = async ({ actions, createNodeId, createContentDigest, reporter
 
     const [report] = res.data.reports;
     const rows = report.data.rows || [];
+    console.info("GA:Views", rows);
 
     rows.forEach(r => {
       const data = {
