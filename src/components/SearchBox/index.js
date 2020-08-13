@@ -24,7 +24,7 @@ const SearchComponent = () => {
       config.algoliaSearchApiKey
   );
 
-  const FullScreen = tw.div`w-screen absolute inset-0 z-10 bg-base-gray bg-opacity-75`;
+  const FullScreen = tw.div`w-screen absolute inset-0 z-50 bg-base-gray bg-opacity-75`;
   return (
     <InstantSearch
         indexName={config.algoliaIndexName}

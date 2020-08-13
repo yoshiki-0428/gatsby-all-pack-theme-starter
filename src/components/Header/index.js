@@ -20,7 +20,7 @@ export class Header extends Component {
       categories
     } = this.props;
 
-    const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-20 bg-white shadow-lg`;
+    const StickyDiv = tw.div`lg:sticky lg:top-0 lg:z-50 bg-white shadow-lg`;
     const Nav = tw.nav`flex items-center justify-between flex-wrap container mx-auto px-8`;
     const SvgWrap = tw.div`flex items-center flex-shrink-0 text-black mr-4 cursor-pointer`;
     const Svg = tw.svg`fill-current w-4 h-4 text-base-font hover:text-primary`;
@@ -46,7 +46,7 @@ export class Header extends Component {
           </SvgWrap>
         }
         {this.state.active &&
-          <div tw="md:hidden text-center pt-10 w-screen fixed inset-0 z-10 bg-white bg-opacity-75">
+          <div tw="md:hidden text-center pt-10 w-screen fixed inset-0 z-50 bg-white bg-opacity-75">
             <ul tw="flex items-center flex-col">
               <li tw="mr-6" onClick={this.handleLinkClick}>
                 <Svg tw="w-6 h-6 mr-64 cursor-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

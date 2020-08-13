@@ -47,7 +47,16 @@ body {
 }
 .content p {
     @apply text-base-font;
-    @apply leading-relaxed;
+    @apply leading-7;
+}
+.content .iframely-embed {
+    @apply my-4;
+}
+.c {
+    @apply z-0 !important;
+}
+.body {
+    @apply rounded !important;
 }
 .content a {
     @apply break-all;

@@ -8,6 +8,7 @@ import ImageWrap from "../Image/ImageWrap";
 import InstantView from "../InstantView";
 import { kebabCase } from 'lodash/string';
 import {CARD, HR, SPACER, TEXT_BASE_CENTER, TEXT_GATSBY_LINK, TITLE_H1, TITLE_H3} from "../Tailwind";
+import "twin.macro";
 
 const Post = ({ post }) => {
   const { id, html } = post;
@@ -45,7 +46,7 @@ const Post = ({ post }) => {
       <ImageWrap item={{socialImage: socialImage}} size={'normal'} />
       <CARD top>
         <SPACER>
-          <div>
+          <div tw="my-4">
             <div className={'content'} dangerouslySetInnerHTML={{ __html: html }} />
           </div>
           <Tags tags={tags} urlPrefix={'tags'} />
