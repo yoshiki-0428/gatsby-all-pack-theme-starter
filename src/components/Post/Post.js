@@ -16,7 +16,7 @@ const Post = ({ post }) => {
   const { slug } = post.fields;
   const { title, date, updatedDate, socialImage, category, relatedLinks } = post.frontmatter;
   const { url, disqusShortname } = useSiteMetadata();
-  const relatedArticles = relatedLinks ? useAllMarkdownRemarkForPopularList(relatedLinks) : null;
+  const relatedArticles = relatedLinks ? useAllMarkdownRemarkForPopularList(relatedLinks) : [];
 
   const tags = post.frontmatter.tags.map(tag => {
     return { fieldValue: tag }
@@ -68,7 +68,7 @@ const Post = ({ post }) => {
           </CARD>
       }
 
-      {relatedArticles &&
+      {relatedArticles.length !== 0 &&
           <CARD>
             <SPACER>
               <TITLE_H3>Related Links</TITLE_H3>
