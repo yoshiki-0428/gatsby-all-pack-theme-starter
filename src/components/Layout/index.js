@@ -6,7 +6,6 @@ import {Link} from "gatsby";
 import ImageWrap from "../Image/ImageWrap";
 import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 import {Header} from "../Header";
-import Iframely from "../IframelyComponent";
 
 const Layout = ({
     main,
