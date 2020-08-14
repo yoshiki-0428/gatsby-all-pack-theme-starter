@@ -6,6 +6,7 @@ import {Link} from "gatsby";
 import ImageWrap from "../Image/ImageWrap";
 import {SPACER, TEXT_GATSBY_LINK_H3} from "../Tailwind";
 import {Header} from "../Header";
+import Iframely from "../IframelyComponent";
 
 const Layout = ({
     main,
@@ -48,7 +49,6 @@ const Layout = ({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css"
               integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossOrigin="anonymous"/>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
-        <script src="https://cdn.iframe.ly/embed.js" async/>
         <link href="https://ucarecdn.com" rel="preconnect" crossOrigin/>
         <link rel="dns-prefetch" href="https://ucarecdn.com"/>
 

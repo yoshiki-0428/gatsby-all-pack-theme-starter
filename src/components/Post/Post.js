@@ -9,6 +9,7 @@ import InstantView from "../InstantView";
 import { kebabCase } from 'lodash/string';
 import {CARD, HR, SPACER, TEXT_BASE_CENTER, TEXT_GATSBY_LINK, TITLE_H1, TITLE_H3} from "../Tailwind";
 import "twin.macro";
+import Iframely from "../IframelyComponent";
 
 const Post = ({ post }) => {
   const { id, html } = post;
@@ -23,6 +24,7 @@ const Post = ({ post }) => {
 
   return (
     <div>
+      <Iframely/>
       <CARD mb>
         <SPACER>
           <TEXT_BASE_CENTER>
