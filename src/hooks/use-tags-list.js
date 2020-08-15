@@ -10,6 +10,13 @@ const useTagsList = () => {
           group(field: frontmatter___tags) {
             fieldValue
             totalCount
+            edges {
+              node {
+                fields {
+                  slug
+                }
+              }
+            }
           }
         }
       }

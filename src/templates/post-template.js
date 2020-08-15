@@ -36,7 +36,6 @@ export const query = graphql`
         title
         socialImage
         category
-        relatedLinks
       }
       tableOfContents
     }

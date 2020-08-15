@@ -11,8 +11,6 @@ tags:
   - B
   - C
 socialImage: https://ucarecdn.com/5cc87f9b-f6e9-4a55-96dc-ba6eeb31467c/
-relatedLinks:
-  - /posts/start-blog-2
 ---
 
 # H1 はじめにはじめにはじめにはじめにはじめにはじめにはじめにはじめに

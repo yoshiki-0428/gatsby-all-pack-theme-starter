@@ -2,7 +2,7 @@ import React from 'react';
 import Tags from '../Tags';
 import { ShareSns } from "../ShareSns/ShareSns";
 import Disqus from 'gatsby-plugin-disqus';
-import {useAllMarkdownRemarkForPopularList, useSiteMetadata} from "../../hooks";
+import {useAllMarkdownRemarkForPopularList, useSiteMetadata, useTagsList} from "../../hooks";
 import moment from "moment";
 import ImageWrap from "../Image/ImageWrap";
 import InstantView from "../InstantView";
@@ -14,11 +14,17 @@ import Iframely from "../Iframely";
 const Post = ({ post }) => {
   const { id, html } = post;
   const { slug } = post.fields;
-  const { title, date, updatedDate, socialImage, category, relatedLinks } = post.frontmatter;
+  const { title, date, updatedDate, socialImage, category, tags } = post.frontmatter;
+  const group = useTagsList();
+  // Tag Listから自分以外のタグで関連するURLを抽出
+  const relatedLinks = group.filter(g => tags.includes(g.fieldValue))
+      .flatMap(g => g.edges)
+      .map(edge => edge.node.fields.slug)
+      .filter(url => url !== slug);
   const { url, disqusShortname } = useSiteMetadata();
-  const relatedArticles = relatedLinks ? useAllMarkdownRemarkForPopularList(relatedLinks) : [];
+  const relatedArticles = relatedLinks ? useAllMarkdownRemarkForPopularList(Array.from(new Set(relatedLinks))) : [];
 
-  const tags = post.frontmatter.tags.map(tag => {
+  const convertTags = tags.map(tag => {
     return { fieldValue: tag }
   });
 
@@ -51,7 +57,7 @@ const Post = ({ post }) => {
           <div tw="my-4">
             <div className={'content'} dangerouslySetInnerHTML={{ __html: html }} />
           </div>
-          <Tags tags={tags} urlPrefix={'tags'} />
+          <Tags tags={convertTags} urlPrefix={'tags'} />
           <ShareSns articleUrl={url + slug} articleTitle={title} />
         </SPACER>
       </CARD>
