@@ -2,7 +2,7 @@
 template: post
 title: 記事のタイトルを入力
 slug: start-blog
-draft: false
+draft: true
 date: 2020-08-01T09:00:00Z
 updatedDate: 2020-08-13T09:00:00Z
 category: Default
