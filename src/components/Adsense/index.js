@@ -4,7 +4,7 @@ import { useSiteSecretData } from "../../hooks/";
 
 const Adsense = () => {
   const config = useSiteSecretData();
-  return (
+  return config.googleAdsnseClientId ? (
       <div>
         <AdSense.Google
             client={config.googleAdsnseClientId}
@@ -12,6 +12,6 @@ const Adsense = () => {
             format="rectangle"
         />
       </div>
-  )
+  ) : null;
 };
 export default Adsense;
