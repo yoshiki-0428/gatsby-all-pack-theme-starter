@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "name": "gatsby-all-pack-theme-starter",
+  "version": "1.0.0",
   "description": "",
   "main": "n/a",
   "scripts": {
@@ -13,7 +14,8 @@
     "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\" \"yarn flow\""
   },
   "repository": "https://github.com/yoshiki-0428/gatsby-all-pack-theme-starter",
-  "author": "Yoshiki Ohashi <rrrtcdish2@gmail.com>",
+  "author": "yoshikiohashi <rrrtcdish2+npm@gmail.com> (https://yoshikiohashi.dev)",
+  "license": "MIT",
   "keywords": [
     "gatsby",
     "graphql",
