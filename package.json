@@ -18,6 +18,8 @@
   "license": "MIT",
   "keywords": [
     "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
     "graphql",
     "netlify",
     "netlify-cms",
@@ -25,14 +27,14 @@
     "categories",
     "tags",
     "prismjs",
-    "static",
-    "lost",
     "blog",
-    "minimal",
     "react",
     "theme",
     "starter",
-    "disqus"
+    "disqus",
+    "algolia",
+    "gtag",
+    "google analytics"
   ],
   "dependencies": {
     "algoliasearch": "^4.0.0",
