@@ -91,6 +91,11 @@ body {
     @apply p-3 mt-2 ml-2;
     @apply list-disc;
 }
+.content ol {
+    @apply text-base-font;
+    @apply p-3 mt-2 ml-2;
+    @apply list-decimal;
+}
 
 .toc ul {
     @apply text-base-font;
