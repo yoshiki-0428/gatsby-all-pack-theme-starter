@@ -48,7 +48,7 @@ git push origin master
 秘匿情報をGit履歴にコミットしないようEnvを設定する必要があります。Themeでは2つのEnvが必要です。
 
 - ALGOLIA_ADMIN_KEY: [取得の仕方](https://www.algolia.com/doc/guides/security/api-keys/#admin-api-key)
-- GA_CRED: : [Google Cloud API Credentials Json 取得の仕方](https://cloud.google.com/docs/authentication/getting-started)
+- GA_CRED: : [Google Analytics 4 API Credentials Json 取得の仕方](https://dev.classmethod.jp/articles/oauth2_ga_api_v4/)
 
 4. デプロイする
 
